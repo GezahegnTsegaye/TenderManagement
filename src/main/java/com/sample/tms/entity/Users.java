@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -20,6 +22,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "USERS")
 @AllArgsConstructor
 @NoArgsConstructor
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public @Data class Users {
 
 	@Id

@@ -1,8 +1,9 @@
-package com.sample.tms.services;
+package com.sample.tms.services_test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+
 
 class AdministratorServiceTest {
 

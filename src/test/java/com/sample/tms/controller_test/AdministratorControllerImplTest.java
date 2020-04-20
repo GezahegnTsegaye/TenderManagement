@@ -1,4 +1,4 @@
-package com.sample.tms.controller;
+package com.sample.tms.controller_test;
 
 import static org.junit.jupiter.api.Assertions.*;
 

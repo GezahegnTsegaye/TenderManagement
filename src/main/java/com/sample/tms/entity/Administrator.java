@@ -1,6 +1,7 @@
 package com.sample.tms.entity;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,6 +19,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "ADMINISTRATOR")
 @NoArgsConstructor
+@DiscriminatorValue("Administrator")
 public @Data class Administrator extends Users {
 
 	@Id
