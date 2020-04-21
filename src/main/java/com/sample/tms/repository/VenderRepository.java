@@ -2,8 +2,8 @@ package com.sample.tms.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.sample.tms.entity.Vender;
+import com.sample.tms.entity.Users;
 
-public interface VenderRepository extends CrudRepository<Vender, Long> {
+public interface VenderRepository extends CrudRepository<Users, Long> {
 
 }

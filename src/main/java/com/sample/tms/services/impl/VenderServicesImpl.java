@@ -3,7 +3,7 @@ package com.sample.tms.services.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sample.tms.entity.Vender;
+import com.sample.tms.entity.Users;
 import com.sample.tms.repository.VenderRepository;
 import com.sample.tms.services.VenderServices;
 
@@ -17,10 +17,10 @@ public class VenderServicesImpl implements VenderServices {
 	
 	
 	@Override
-	public Vender getVender(Vender vender) {
+	public Users getVender(Users vender) {
 		
 		venderRepository.save(vender);
-		return new Vender();
+		return new Users();
 	}
 	
 	

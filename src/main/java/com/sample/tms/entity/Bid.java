@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -18,7 +19,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 /**
  * 
- * @author Gezahegn Tsegaye
+ * @author Gezahegn
  *
  */
 
@@ -32,21 +33,18 @@ public @Data class Bid {
 	@Id
 	@GeneratedValue
 	@Column(name = "BID_ID")
-	private Long bidId;
+	private long bidId;
 	
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-	@JoinColumn(name = "tender_Id")
-	private List<Tender> tender = new ArrayList<>();
+	@ManyToOne
+	private Tender tender;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "vender_id")
-	private List<Vender> venders = new ArrayList<>();
+	@ManyToOne
+	private Users users;
 	
 	@Column(name = "bidAmount")
 	private double bidAmount;
+	
 	@Column(name = "bid_time")
 	private Timestamp bidTime;
-	
-	private String selectBid="Processing";
 
 }

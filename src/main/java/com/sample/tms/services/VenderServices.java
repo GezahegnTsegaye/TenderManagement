@@ -1,9 +1,9 @@
 package com.sample.tms.services;
 
-import com.sample.tms.entity.Vender;
+import com.sample.tms.entity.Users;
 
 public interface VenderServices {
 
-	Vender getVender(Vender vender);
+	Users getVender(Users vender);
 
 }

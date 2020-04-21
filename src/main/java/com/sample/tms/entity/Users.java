@@ -1,11 +1,17 @@
 package com.sample.tms.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -28,7 +34,7 @@ public @Data class Users {
 	@Id
 	@GeneratedValue
 	@Column(name = "user_id")
-	private Long userId;
+	private long userId;
 
 	@Column(name = "First_name")
 	private String firstName;
@@ -50,5 +56,11 @@ public @Data class Users {
 
 	@Column(name = "phone_number")
 	private Integer phoneNumber;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "user_Id")
+	private List<Bid> tender = new ArrayList<>();
+	
+	
 
 }
