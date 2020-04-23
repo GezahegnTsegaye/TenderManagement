@@ -46,5 +46,22 @@ public @Data class Bid {
 	
 	@Column(name = "bid_time")
 	private Timestamp bidTime;
+	
+	@Column(name = "trade_licence")
+	private String trade_licence;
+	
+	
+	@Column(name = "income_tax")
+	private String income_tax;
+	
+	@Column(name = "published")
+	private String published;
+	
+	@Column(name = "description")
+	private String description;
+	
+	
+	
+	
 
 }
