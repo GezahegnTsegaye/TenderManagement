@@ -6,5 +6,8 @@ import com.sample.tms.services.AdministratorService;
 
 @Service
 public class AdministratorServiceImpl implements AdministratorService{
+	
+	
+	
 
 }
