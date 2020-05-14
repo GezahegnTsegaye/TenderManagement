@@ -14,6 +14,8 @@ public class AdministratorServiceImpl implements AdministratorService {
 
 	@Autowired
 	private AdministratorRepository administratorRepository;
+	
+	
 
 	@Override
 	public Iterable<Administrator> listAdmin() {
