@@ -1,12 +1,14 @@
 package com.sample.tms.services;
 
+import java.util.Optional;
+
 import com.sample.tms.entity.Administrator;
 
 public interface AdministratorService {
 
 	Iterable<Administrator> listAdmin();
 	
-	Administrator findOne(Long id);
+	Optional<Administrator> findOne(Long id);
 	
 	Administrator addAdmin(Administrator administrator);
 	

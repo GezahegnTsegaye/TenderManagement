@@ -1,5 +1,7 @@
 package com.sample.tms.services.impl;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,21 +23,19 @@ public class AdministratorServiceImpl implements AdministratorService {
 	}
 
 	@Override
-	public Administrator findOne(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Administrator> findOne(Long id) {
+		return administratorRepository.findById(id);
 	}
 
 	@Override
 	public Administrator addAdmin(Administrator administrator) {
-		// TODO Auto-generated method stub
-		return null;
+		return administratorRepository.save(administrator);
 	}
 
 	@Override
 	public String deleteAdmin(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		administratorRepository.deleteById(id);
+		return "{'Message':'Admin Deleted Succefully'}";
 	}
 
 }
