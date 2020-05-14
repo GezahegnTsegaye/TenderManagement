@@ -15,6 +15,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.data.jpa.domain.AbstractPersistable;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,15 +28,15 @@ import lombok.NoArgsConstructor;
  */
 
 @Entity
-@Table(name = "TENDER")
 @NoArgsConstructor
 @AllArgsConstructor
-public @Data class Tender {
+public @Data class Tender extends AbstractPersistable<Long>{
 
-	@Id
-	@GeneratedValue
-	@Column(name = "TENDER_ID")
-	private long tenderId;
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L; 
 
 	@Column(name = "tender_name")
 	private String tName;
@@ -51,8 +53,7 @@ public @Data class Tender {
 	@Column(name = "tender_description")
 	private String tDesc;
 	
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-	@JoinColumn(name = "tender_Id")
+	@OneToMany(targetEntity = Tender.class, mappedBy = "tender", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Tender> tender = new ArrayList<>();
 	
 	
