@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.data.jpa.domain.AbstractPersistable;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,16 +19,12 @@ import lombok.NoArgsConstructor;
  */
 
 @Entity
-@Table(name = "ADMINISTRATOR")
 @NoArgsConstructor
 @DiscriminatorValue("Administrator")
-public @Data class Administrator {
+public @Data class Administrator extends AbstractPersistable<Long>{
 
-	@Id
-	@GeneratedValue
-	@Column(name = "ADMIN_ID")
-	private long id;
-	@Column(name = "First_name")
+
+	
 	private String firstName;
 
 	@Column(name = "middle_name")
