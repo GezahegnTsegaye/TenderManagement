@@ -7,7 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TMApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TMApplication.class, args);
+
+		SpringApplication application = new SpringApplication(TMApplication.class);
+		application.setAdditionalProfiles("dev");
+		application.run(args);
 	}
 
 }
