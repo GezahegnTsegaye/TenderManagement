@@ -4,7 +4,7 @@ import com.tms.services.BidServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tms.entity.Bid;
+import com.tms.model.Bid;
 import com.tms.repository.BidRepository;
 
 @Service

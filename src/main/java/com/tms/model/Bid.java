@@ -1,8 +1,6 @@
-package com.tms.entity;
+package com.tms.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,13 +12,12 @@ import java.security.Timestamp;
  *
  */
 
-@NoArgsConstructor
-@AllArgsConstructor
+
 @Entity
 @Table(name = "BID", schema = "public")
 public @Data class Bid implements Serializable {
 
-	private final static long serialVersionUID = -8177651785801606912L;
+	private  static final long serialVersionUID = -8177651785801606912L;
 
 	@Id
 	@Column(name = "bidId")

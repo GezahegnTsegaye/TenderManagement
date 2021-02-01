@@ -1,6 +1,6 @@
 package com.tms.services;
 
-import com.tms.entity.Users;
+import com.tms.model.Users;
 
 public interface VenderServices {
 

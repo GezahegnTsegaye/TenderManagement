@@ -1,4 +1,4 @@
-package com.tms.restcontroller;
+package com.tms.controller;
 
 public interface TMSController {
 

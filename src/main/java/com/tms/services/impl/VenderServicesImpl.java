@@ -3,7 +3,7 @@ package com.tms.services.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tms.entity.Users;
+import com.tms.model.Users;
 import com.tms.repository.VenderRepository;
 import com.tms.services.VenderServices;
 

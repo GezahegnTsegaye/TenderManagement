@@ -1,17 +1,12 @@
-package com.tms.entity;
+package com.tms.model;
 
+import lombok.Data;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.security.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.*;
-
-import org.springframework.data.jpa.domain.AbstractPersistable;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * 
@@ -20,8 +15,6 @@ import lombok.NoArgsConstructor;
  */
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
 @Table(name = "tender", schema = "public")
 public @Data class Tender implements Serializable {
 
@@ -53,9 +46,8 @@ public @Data class Tender implements Serializable {
 	@Column(name = "tender_description")
 	private String tDesc;
 	
-	@OneToMany(targetEntity = Tender.class, mappedBy = "tender",
-			fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<Tender> tender = new ArrayList<>();
+	@OneToMany(mappedBy = "tender")
+	private List<Bid> bids = new ArrayList<>();
 	
 	
 

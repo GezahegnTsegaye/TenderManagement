@@ -1,16 +1,11 @@
-package com.tms.entity;
+package com.tms.model;
 
+import lombok.Data;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.*;
-
-import org.springframework.data.jpa.domain.AbstractPersistable;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * 
@@ -19,8 +14,6 @@ import lombok.NoArgsConstructor;
  */
 
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
 @Table(name = "users", schema = "public")
 public @Data class Users implements Serializable {
 
@@ -28,6 +21,16 @@ public @Data class Users implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
+
+
+	@Id
+	@Column(name = "user_Id")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq_gen")
+	@SequenceGenerator(name = "user_seq_gen", sequenceName = "user_seq",allocationSize = 1)
+	private Long id;
+
+
 
 	@Column(name = "First_name")
 	private String firstName;
@@ -50,7 +53,8 @@ public @Data class Users implements Serializable {
 	@Column(name = "phone_number")
 	private Integer phoneNumber;
 	
-	@OneToMany(targetEntity = Bid.class, mappedBy = "users", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(targetEntity = Bid.class, mappedBy = "users",
+			fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Bid> bids = new ArrayList<>();
 	
 	

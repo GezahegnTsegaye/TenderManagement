@@ -1,6 +1,6 @@
 package com.tms.services;
 
-import com.tms.entity.Bid;
+import com.tms.model.Bid;
 
 public interface BidServices {
 

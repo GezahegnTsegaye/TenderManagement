@@ -4,7 +4,7 @@ import com.tms.services.TenderServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tms.entity.Tender;
+import com.tms.model.Tender;
 import com.tms.repository.TenderRepository;
 
 
