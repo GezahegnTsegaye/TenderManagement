@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tms.entity.Administrator;
+import com.tms.model.Administrator;
 import com.tms.repository.AdministratorRepository;
 import com.tms.services.AdministratorService;
 

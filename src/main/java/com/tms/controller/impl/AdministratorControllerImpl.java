@@ -1,8 +1,8 @@
-package com.tms.restcontroller.impl;
+package com.tms.controller.impl;
 
 import java.util.Optional;
 
-import com.tms.entity.Administrator;
+import com.tms.model.Administrator;
 import com.tms.services.AdministratorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tms.restcontroller.AdministratorController;
+import com.tms.controller.AdministratorController;
 
 @RestController
 @RequestMapping("/admin")

@@ -2,7 +2,7 @@ package com.tms.services;
 
 import java.util.Optional;
 
-import com.tms.entity.Administrator;
+import com.tms.model.Administrator;
 
 public interface AdministratorService {
 

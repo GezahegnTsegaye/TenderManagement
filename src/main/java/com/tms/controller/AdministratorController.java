@@ -1,8 +1,8 @@
-package com.tms.restcontroller;
+package com.tms.controller;
 
 import java.util.Optional;
 
-import com.tms.entity.Administrator;
+import com.tms.model.Administrator;
 
 public interface AdministratorController {
 

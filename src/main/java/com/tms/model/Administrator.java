@@ -1,7 +1,6 @@
-package com.tms.entity;
+package com.tms.model;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,12 +12,10 @@ import java.io.Serializable;
  */
 
 @Entity
-@NoArgsConstructor
-@DiscriminatorValue("Administrator")
 @Table(name = "administrator", schema = "public")
 public @Data class Administrator implements Serializable {
 
-	private final static long serialVersionUID = 1L;
+	private  static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name = "administratorId")
