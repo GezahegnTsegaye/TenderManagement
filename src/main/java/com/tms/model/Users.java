@@ -26,8 +26,8 @@ public @Data class Users implements Serializable {
 
 	@Id
 	@Column(name = "user_Id")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq_gen")
-	@SequenceGenerator(name = "user_seq_gen", sequenceName = "user_seq",allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_seq_gen")
+	@SequenceGenerator(name = "users_seq_gen", sequenceName = "users_seq",allocationSize = 1)
 	private Long id;
 
 
