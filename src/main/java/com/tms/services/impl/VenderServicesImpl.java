@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tms.model.Users;
+import com.tms.model.Vender;
 import com.tms.repository.VenderRepository;
 import com.tms.services.VenderServices;
 
@@ -17,10 +18,10 @@ public class VenderServicesImpl implements VenderServices {
 	
 	
 	@Override
-	public Users getVender(Users vender) {
+	public Vender getVender(Vender vender) {
 		
 		venderRepository.save(vender);
-		return new Users();
+		return new Vender();
 	}
 	
 	

@@ -50,5 +50,9 @@ public @Data class Bid implements Serializable {
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "users_id")
 	private Users users;
+	
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "vender_id")
+	private Vender vender;
 
 }
