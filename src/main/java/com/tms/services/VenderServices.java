@@ -6,4 +6,5 @@ public interface VenderServices {
 
 	Vender getVender(Vender vender);
 
+    Vender getVenders(String email);
 }

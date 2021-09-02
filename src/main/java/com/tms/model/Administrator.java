@@ -13,7 +13,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "administrator", schema = "public")
-public @Data class Administrator implements Serializable {
+public class Administrator implements Serializable {
 
 	private  static final long serialVersionUID = 1L;
 
@@ -48,9 +48,5 @@ public @Data class Administrator implements Serializable {
 	
 	@Column(name = "password")
 	private String password;
-
-
-
-
 
 }
