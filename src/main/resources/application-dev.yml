@@ -7,7 +7,7 @@ spring:
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration
   datasource:
-    url: jdbc:postgresql://localhost:5432/tender_db
+    url: jdbc:postgresql://localhost:5432/tender-db
     username: postgres
     password: admin
     driverClassName: org.postgresql.Driver
@@ -43,10 +43,5 @@ logging:
     org.springframework.web: debug
 
 
-email:
-  address: email
-  password: pwd
-onesignal:
-  REST_API_KEY: Y2UwNTFhMWYtYWQ5MC00ZThlLTllNjMtNmFhY2JmOGUzYTQ4
-  APP_ID: 7982255d-ff26-4eee-b0aa-03acce370514
+
 

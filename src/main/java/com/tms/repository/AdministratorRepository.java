@@ -1,13 +1,12 @@
 package com.tms.repository;
 
 import com.tms.model.Administrator;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-import org.springframework.data.repository.CrudRepository;
+public interface AdministratorRepository extends JpaRepository<Administrator, Long> {
 
-public interface AdministratorRepository extends CrudRepository<Administrator, Long> {
-	
-	List<Administrator> findByAdministratorEmail(String email);
+	List<Administrator> findAll();
 
 }

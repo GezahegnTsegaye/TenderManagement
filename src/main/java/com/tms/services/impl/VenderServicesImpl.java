@@ -21,21 +21,10 @@ public class VenderServicesImpl implements VenderServices {
 
 
     @Override
-    public Vender getVender(Vender vender) {
+    public Vender addVender(Vender vender) {
 
         venderRepository.save(vender);
         return new Vender();
     }
-
-
-    @Override
-    public Vender getVenders(String email) {
-        if (StringUtils.isEmpty(email)) {
-            System.out.println("in this case the machine will not accept empty");
-        }
-
-        return venderRepository.findByVenderEmail(email);
-    }
-
 
 }

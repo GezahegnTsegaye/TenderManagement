@@ -1,10 +1,14 @@
 package com.tms.controller.impl;
 
+import java.util.List;
 import java.util.Optional;
 
+import com.tms.exceptions.EntityNotFoundException;
 import com.tms.model.Administrator;
 import com.tms.services.AdministratorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.ObjectUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,12 +25,6 @@ public class AdministratorControllerImpl implements AdministratorController {
 	@Autowired
 	private AdministratorService administratorService;
 
-	@Override
-	@GetMapping("/list")
-	public Iterable<Administrator> listAdmin() {
-
-		return administratorService.listAdmin();
-	}
 
 	@Override
 	@PostMapping("/add")
@@ -36,14 +34,16 @@ public class AdministratorControllerImpl implements AdministratorController {
 	}
 
 	@Override
-	@GetMapping("/list/{id}")
-	public Optional<Administrator> findOne(@PathVariable Long id) {
-		return administratorService.findOne(id);
+	@GetMapping("/list")
+	public List<Administrator> findAll() {
+
+		return administratorService.findAll();
 	}
 
 	@Override
 	@GetMapping("/delete/{id}")
 	public String deleteAdmin(@PathVariable Long id) {
+
 		return administratorService.deleteAdmin(id);
 	}
 

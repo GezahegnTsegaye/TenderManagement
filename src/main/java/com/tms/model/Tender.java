@@ -1,11 +1,8 @@
 package com.tms.model;
 
-import lombok.Data;
-
 import javax.persistence.*;
 import java.io.Serializable;
-import java.security.Timestamp;
-import java.util.ArrayList;
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -16,7 +13,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "tender", schema = "public")
-public @Data class Tender implements Serializable {
+public class Tender implements Serializable {
 
 	
 	/**
@@ -35,10 +32,10 @@ public @Data class Tender implements Serializable {
 	private String tName;
 
 	@Column(name = "opening")
-	private Timestamp opening;
+	private LocalDateTime opening;
 
 	@Column(name = "closing")
-	private Timestamp closing;
+	private LocalDateTime closing;
 
 	@Column(name = "min_bid")
 	private Double minBid;
@@ -47,7 +44,7 @@ public @Data class Tender implements Serializable {
 	private String tDesc;
 	
 	@OneToMany(mappedBy = "tender")
-	private List<Bid> bids = new ArrayList<>();
+	private List<Bid> bids;
 	
 	
 

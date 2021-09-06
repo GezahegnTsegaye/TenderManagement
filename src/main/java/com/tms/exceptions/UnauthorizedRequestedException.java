@@ -2,7 +2,7 @@ package com.tms.exceptions;
 
 /**
  * 
- * @author Gezahegn Tsegaye
+ * @author Gezahegn
  *
  */
 public final class UnauthorizedRequestedException extends RuntimeException {

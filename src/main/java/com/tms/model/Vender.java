@@ -1,19 +1,8 @@
 package com.tms.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
 
 
 @Entity
@@ -48,6 +37,8 @@ public class Vender implements Serializable{
 	@Column(name = "email")
 	private String email;
 
+	private String faxNo;
+
 	@Column(name = "address")
 	private String address;
 
@@ -59,7 +50,7 @@ public class Vender implements Serializable{
 	
 	@OneToMany(targetEntity = Bid.class, mappedBy = "users",
 			fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<Bid> bids = new ArrayList<>();
+	private List<Bid> bids;
 	
 	
 	

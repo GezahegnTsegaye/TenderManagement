@@ -9,6 +9,4 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface VenderRepository extends CrudRepository<Vender, Long> {
 
-	
-	Vender findByVenderEmail(String email);
 }

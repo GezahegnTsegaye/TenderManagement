@@ -1,6 +1,6 @@
 package com.tms.services.impl;
 
-import java.util.Optional;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,8 +25,9 @@ public class AdministratorServiceImpl implements AdministratorService {
 	}
 
 	@Override
-	public Optional<Administrator> findOne(Long id) {
-		return administratorRepository.findById(id);
+	public List<Administrator> findAll() {
+
+		return administratorRepository.findAll();
 	}
 
 	@Override
