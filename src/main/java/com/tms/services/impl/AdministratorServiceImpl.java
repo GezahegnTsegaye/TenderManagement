@@ -1,10 +1,12 @@
 package com.tms.services.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.tms.dal.dto.AdministratorDto;
 import com.tms.model.Administrator;
 import com.tms.repository.AdministratorRepository;
 import com.tms.services.AdministratorService;
@@ -18,9 +20,17 @@ public class AdministratorServiceImpl implements AdministratorService {
 	
 
 	@Override
-	public Iterable<Administrator> listAdmin() {
+	public List<AdministratorDto> listAdmin() {
+		List<Administrator> adminList = administratorRepository.findAll();
+		List<AdministratorDto> adminDtos = new ArrayList<AdministratorDto>();
+		AdministratorDto adminDto = new AdministratorDto();
+		for (Administrator admin: adminList) {
+			adminDto.setAdminId(admin.getId());
+			adminDto.setAdminName(admin.getName());
+			adminDtos.add(adminDto);
+		}
 
-		return administratorRepository.findAll();
+		return adminDtos ;
 
 	}
 

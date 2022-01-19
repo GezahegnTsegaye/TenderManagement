@@ -1,6 +1,9 @@
 package com.tms.model;
 
 import javax.persistence.*;
+
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
@@ -8,7 +11,7 @@ import java.io.Serializable;
  * @author Gezahegn
  *
  */
-
+@Data
 @Entity
 @Table(name = "administrator", schema = "public")
 public class Administrator implements Serializable {
@@ -22,31 +25,15 @@ public class Administrator implements Serializable {
 	private Long id;
 
 	private String firstName;
-
-	@Column(name = "middle_name")
 	private String middleName;
-
-	@Column(name = "last_name")
 	private String lastName;
-
-	@Column(name = "email")
 	private String email;
-
-	@Column(name = "address")
 	private String address;
-
-	@Column(name = "mobile_number")
 	private Integer mobileNumber;
-
-	@Column(name = "phone_number")
 	private Integer phoneNumber;
-	
-	@Column(name = "username")
 	private String username;
-	
 	@Column(name = "password", nullable = false)
 	private String password;
-
 	private String status;
 
 
