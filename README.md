@@ -14,3 +14,5 @@ fundamental functions of the core modules are discussed below.
 - Tenderer
 - Evalutors
 - Committee
+
+This application depend on this paper https://www.researchgate.net/publication/221547680_Design_of_a_web-based_tendering_system_for_e-Government_procurement
