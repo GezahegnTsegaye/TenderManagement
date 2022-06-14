@@ -22,15 +22,16 @@ public class AdministratorServiceImpl implements AdministratorService {
 	@Override
 	public List<AdministratorDto> listAdmin() {
 		List<Administrator> adminList = administratorRepository.findAll();
-		List<AdministratorDto> adminDtos = new ArrayList<AdministratorDto>();
+		List<AdministratorDto> administratorDtos = new ArrayList<AdministratorDto>();
 		AdministratorDto adminDto = new AdministratorDto();
+
 		for (Administrator admin: adminList) {
 			adminDto.setAdminId(admin.getId());
-			adminDto.setAdminName(admin.getName());
-			adminDtos.add(adminDto);
+			adminDto.setAdminName(admin.getFirstName() + " " + admin.getLastName());
+			administratorDtos.add(adminDto);
 		}
 
-		return adminDtos ;
+		return administratorDtos ;
 
 	}
 

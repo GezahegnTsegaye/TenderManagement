@@ -10,6 +10,7 @@
         <module>tenderer</module>
         <module>committee</module>
         <module>evaluator</module>
+        <module>user-service</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
