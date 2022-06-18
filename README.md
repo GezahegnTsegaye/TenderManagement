@@ -1,22 +1,18 @@
 # TenderManagement
 This work is intended to solve current manual Tender Management into building a new Online Tender Management System that's works for all.
-# Proposed System
-The main purpose of this “Online Tender Management System” is to provide all tender documents online which can be accessed by all the suppliers using their id and password. Suppliers will able to act on more than one tender through this online system. Eliminating the need of sending and receiving the documents by post, so immediate response can be taken for the current existing tender. To reduce paper work, data which are available online, using this final decision can be taken by the administration and can contact directly to such suppliers. To make an interactive system, data validation checkup will be performed by the browser side, suppliers and administration will be provided with download and print facility also.
+## SYSTEM DESIGN
+In our proposed design, we modeled the roles of users in eTendering into individual modules. The idea is that the functions
+that belong to each user role are encapsulated on their own,making the design flexible to be integrate with existing interdepartment workflows. There are several main modules that roughly can be classified as the technical support – database that archive all the information, and web service module that facilities data passing over an Intranet. The other modules go by the typical roles in e-Tendering such as tenderers, tenderees, and general
+users. In particular, the backend processes are modeled in evaluator module and committee module which are meant for 
+managing the tendering processes after the bids are received. These backend processes in most existing e-Tendering systems are
+still conducted manually. In our design, the committee module and the evaluator module are there to either
+replace or accomplish these manual works that depends on how far the workflows get automated. At present, while the eTendering workflow at the backend is still managed by human users, the modules serve as ICT supports to facilitate online interaction / communication in deciding the winners and how jobs
+should be distributed. In the future, when the workflow that couples the frontend and the backend processes become fully automated, the modules could be extended with software agent technology and trading rules – that would ultimately achieve a scenario The system architecture of our proposed WTS The
+fundamental functions of the core modules are discussed below.
+### Modules
+- Tenderee
+- Tenderer
+- Evalutors
+- Committee
 
-Modules
-
-	. Administration.
-	. Employees.
-	. Purchase Department.
-	. Suppliers.
-# Administration:-
-Administration will be the master user of this system who will responsible for uploading advertisement documents, verifying suppliers by using their information, maintaining data and privileges of working employees, confirmation of final report.
-
-# Employees:-
-Employees will responsible for bidding information of suppliers and preparing selection list. Final decision will be taken by admin.
-
-# Purchase Department:-
-Purchase department will look after the materials supplied, their quality and quantity and release funds to the suppliers account.
-
-# Suppliers:-
-Suppliers will place their bid, personal query and take part in tendering auction also. They can fill the tender form and download the advertisement also. They can check their status and if selected, their confirmation message from the admin side.
+This application depend on this paper https://www.researchgate.net/publication/221547680_Design_of_a_web-based_tendering_system_for_e-Government_procurement
