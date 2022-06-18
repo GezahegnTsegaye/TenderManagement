@@ -13,7 +13,6 @@ import com.tms.services.AdministratorService;
 
 @Service
 public class AdministratorServiceImpl implements AdministratorService {
-
 	
 	private final AdministratorRepository administratorRepository;
 

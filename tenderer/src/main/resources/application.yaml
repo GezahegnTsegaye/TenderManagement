@@ -5,4 +5,16 @@ server:
 spring:
   application:
     name: tenderer
+  datasource:
+    username: 'postgres'
+    url: jdbc:postgresql://localhost:5432/tenderer-service
+    password: 'admin'
+    jpa:
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          format_sql: 'true'
+      hibernate:
+        ddl-auto: update
+      show-sql: 'true'
 

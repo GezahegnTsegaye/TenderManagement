@@ -1,12 +1,12 @@
 package com.tms.controller;
 
-import com.tms.model.TendereeDetail;
+import com.tms.model.TenderDetail;
 import org.springframework.stereotype.Service;
 
 @Service
 public record TendereeService () {
 
     public void registerTenderee(TendereeRequest tendereeRequest){
-        TendereeDetail  tendereeDetail = TendereeDetail.builder().firstName(tendereeRequest.firstName()).build();
+        TenderDetail tendereeDetail = TenderDetail.builder().firstName(tendereeRequest.firstName()).build();
     }
 }
