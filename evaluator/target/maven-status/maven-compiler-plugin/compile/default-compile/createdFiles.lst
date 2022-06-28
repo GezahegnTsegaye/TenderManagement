@@ -1,3 +1,4 @@
+com/tms/repository/AdministratorRepository.class
 com/tms/model/VenderInvoice.class
 com/tms/services/impl/VenderServicesImpl.class
 com/tms/model/Administrator.class
@@ -6,8 +7,10 @@ com/tms/services/TenderServices.class
 com/tms/model/Users.class
 com/tms/EvaluatorApplication.class
 com/tms/model/Employees.class
+com/tms/config/SecurityConfig.class
 com/tms/exceptions/EntityNotFoundException.class
 com/tms/services/VenderServices.class
+com/tms/model/ShortList.class
 com/tms/model/TendererDetails.class
 com/tms/services/BidServices.class
 com/tms/repository/TenderRepository.class
@@ -15,7 +18,12 @@ com/tms/controller/TMSController.class
 com/tms/model/Vender.class
 com/tms/repository/VenderRepository.class
 com/tms/model/TendererDetails$TendererDetailsBuilder.class
+com/tms/controller/Contract.class
+com/tms/config/SwaggerConfig.class
+com/tms/util/LoggingRequestInterceptor.class
+com/tms/exceptions/handler/RestResponseEntityExceptionHandler.class
 com/tms/model/Bid.class
+com/tms/services/impl/AdministratorServiceImpl.class
 com/tms/model/Tender.class
 com/tms/controller/TendererController.class
 com/tms/controller/impl/TMSControllerImpl.class
@@ -24,4 +32,5 @@ com/tms/exceptions/UnauthorizedRequestedException.class
 com/tms/repository/BidRepository.class
 com/tms/dto/AdministratorDto.class
 com/tms/controller/AdministratorController.class
+com/tms/services/impl/BidServicesImpl.class
 com/tms/services/AdministratorService.class

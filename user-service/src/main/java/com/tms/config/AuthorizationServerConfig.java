@@ -24,22 +24,22 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     AuthenticationManager authenticationManager;
 
     @Override
-    public void configure(AuthorizationServerEndpointsConfigurer endpointsConfigurer) {
-        endpointsConfigurer.authenticationManager(authenticationManager)
+    public void configure(AuthorizationServerEndpointsConfigurer endpointsConfigure) {
+        endpointsConfigure.authenticationManager(authenticationManager)
                 .tokenStore(tokenStore());
     }
     @Override
-    public void configure(ClientDetailsServiceConfigurer configurer) throws Exception {
-        configurer.jdbc(dataSource());
+    public void configure(ClientDetailsServiceConfigurer configure) throws Exception {
+        configure.jdbc(dataSource());
     }
     @Override
-    public void configure(AuthorizationServerSecurityConfigurer serverConfigurer){
-        serverConfigurer.checkTokenAccess("permitAll");
+    public void configure(AuthorizationServerSecurityConfigurer serverConfigure){
+        serverConfigure.checkTokenAccess("permitAll");
 
     }
 
     @Bean
-    private DataSource dataSource() {
+    private final DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.hsqldb.jdbcDriver");
         dataSource.setUrl("");
