@@ -1,8 +1,7 @@
 package com.tms.model;
 
-import lombok.Data;
+import jakarta.persistence.*;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.security.Timestamp;
 
@@ -14,8 +13,8 @@ import java.security.Timestamp;
 
 
 @Entity
-@Table(name = "BID", schema = "public")
-public @Data class Bid implements Serializable {
+@Table(name = "BID")
+public class Bid implements Serializable {
 
 	private  static final long serialVersionUID = -8177651785801606912L;
 

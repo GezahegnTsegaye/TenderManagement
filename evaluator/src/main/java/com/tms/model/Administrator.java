@@ -1,8 +1,11 @@
 package com.tms.model;
 
-import javax.persistence.*;
 
-import lombok.Data;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
 
@@ -11,9 +14,10 @@ import java.io.Serializable;
  * @author Gezahegn
  *
  */
-@Data
+
+@Setter@Getter@NoArgsConstructor@AllArgsConstructor
 @Entity
-@Table(name = "administrator", schema = "public")
+@Table(name = "administrator")
 public class Administrator implements Serializable {
 
 	private  static final long serialVersionUID = 1L;

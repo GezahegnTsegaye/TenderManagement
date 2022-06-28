@@ -1,6 +1,11 @@
 package com.tms.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -11,8 +16,9 @@ import java.util.List;
  *
  */
 
+@Setter@Getter@NoArgsConstructor@AllArgsConstructor
 @Entity
-@Table(name = "tender", schema = "public")
+@Table(name = "tender")
 public class Tender implements Serializable {
 
 	

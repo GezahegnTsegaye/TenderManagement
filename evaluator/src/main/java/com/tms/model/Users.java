@@ -1,13 +1,18 @@
 package com.tms.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.util.List;
 
 /**
  * @author Gezahegn Tsegaye
  */
-
+@Setter@Getter@AllArgsConstructor@NoArgsConstructor
 @Entity
 @Table(name = "users", schema = "public")
 public class Users implements Serializable {

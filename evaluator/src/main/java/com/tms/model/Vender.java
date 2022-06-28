@@ -1,12 +1,18 @@
 package com.tms.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.util.List;
 
-
+@Setter
+@Getter@AllArgsConstructor@NoArgsConstructor
 @Entity
-@Table(name = "vender", schema = "public")
+@Table(name = "vender")
 public class Vender implements Serializable{
 
 	
@@ -36,8 +42,8 @@ public class Vender implements Serializable{
 
 	@Column(name = "email")
 	private String email;
-
-	private String faxNo;
+	@Column(name = "fax_number", unique = true)
+	private String faxNumber;
 
 	@Column(name = "address")
 	private String address;
