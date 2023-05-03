@@ -1,10 +1,8 @@
 package com.tms.util;
 
 
-import org.springframework.context.annotation.Configuration;
+public final class UserConfig {
 
-@Configuration
-public class UserConfig {
 
     public static final String USER_SERVICE_URL = "http://localhost:8081";
     public static final String USER_SERVICE_USERNAME = "user";

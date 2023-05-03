@@ -1,12 +1,9 @@
 package com.tms.repository;
 
-import com.tms.model.Users;
 import com.tms.model.Vender;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
+public interface VenderRepository extends JpaRepository<Vender, Long> {
 
-import org.springframework.data.repository.CrudRepository;
-
-public interface VenderRepository extends CrudRepository<Vender, Long> {
 
 }
