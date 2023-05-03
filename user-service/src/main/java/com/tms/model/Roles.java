@@ -1,6 +1,5 @@
 package com.tms.model;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,6 +19,7 @@ public class Roles {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "roles_id_seq")
     private Long id;
     private String role;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "role_id"),

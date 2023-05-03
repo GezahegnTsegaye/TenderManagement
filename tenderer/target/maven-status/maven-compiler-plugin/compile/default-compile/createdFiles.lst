@@ -1,0 +1,4 @@
+com\tms\models\WorkItemDetail.class
+com\tms\TendererApplication.class
+com\tms\models\PricingItemDetail.class
+com\tms\models\WorkItem.class

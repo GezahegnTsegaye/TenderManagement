@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\controller\TendereeRegistrationRequest.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\repository\Tender.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\AccountType.java
@@ -13,3 +14,18 @@ D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\repository\Te
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\controller\TendereeService.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\DocumentType.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\Tender.java
+=======
+/home/lemma/Documents/002INSIGHT_PRO/TenderManagement/tenderee/src/main/java/com/tms/model/DocumentType.java
+/home/lemma/Documents/002INSIGHT_PRO/TenderManagement/tenderee/src/main/java/com/tms/model/TenderDetail.java
+/home/lemma/Documents/002INSIGHT_PRO/TenderManagement/tenderee/src/main/java/com/tms/model/TenderCategory.java
+/home/lemma/Documents/002INSIGHT_PRO/TenderManagement/tenderee/src/main/java/com/tms/repository/TenderDetail.java
+/home/lemma/Documents/002INSIGHT_PRO/TenderManagement/tenderee/src/main/java/com/tms/controller/TendereeRegistrationRequest.java
+/home/lemma/Documents/002INSIGHT_PRO/TenderManagement/tenderee/src/main/java/com/tms/TendereeApplication.java
+/home/lemma/Documents/002INSIGHT_PRO/TenderManagement/tenderee/src/main/java/com/tms/model/Tender.java
+/home/lemma/Documents/002INSIGHT_PRO/TenderManagement/tenderee/src/main/java/com/tms/model/AccountType.java
+/home/lemma/Documents/002INSIGHT_PRO/TenderManagement/tenderee/src/main/java/com/tms/repository/Tender.java
+/home/lemma/Documents/002INSIGHT_PRO/TenderManagement/tenderee/src/main/java/com/tms/model/TenderType.java
+/home/lemma/Documents/002INSIGHT_PRO/TenderManagement/tenderee/src/main/java/com/tms/controller/TendereeController.java
+/home/lemma/Documents/002INSIGHT_PRO/TenderManagement/tenderee/src/main/java/com/tms/controller/TendereeRequest.java
+/home/lemma/Documents/002INSIGHT_PRO/TenderManagement/tenderee/src/main/java/com/tms/controller/TendereeService.java
+>>>>>>> a35bd8f118291efa471cca98736c83735285c780

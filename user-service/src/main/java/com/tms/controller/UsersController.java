@@ -2,6 +2,7 @@ package com.tms.controller;
 
 import org.springframework.http.ResponseEntity;
 
+
 public interface UsersController {
   ResponseEntity<String> getAdmin();
 
@@ -12,4 +13,5 @@ public interface UsersController {
   ResponseEntity<String> getTendereeAdmin();
 
   ResponseEntity<String> getTenderAdmin();
+
 }
