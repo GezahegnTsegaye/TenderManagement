@@ -1,8 +1,8 @@
 package com.tms.services.impl;
 
-import com.tms.dto.AdministratorDto;
-import com.tms.model.Administrator;
-import com.tms.repository.AdministratorRepository;
+import com.tms.dal.dto.AdministratorDto;
+import com.tms.dal.model.Administrator;
+import com.tms.dal.repository.AdministratorRepository;
 import com.tms.services.AdministratorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

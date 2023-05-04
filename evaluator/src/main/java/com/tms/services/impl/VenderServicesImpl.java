@@ -1,7 +1,7 @@
 package com.tms.services.impl;
 
-import com.tms.model.Vender;
-import com.tms.repository.VenderRepository;
+import com.tms.dal.model.Vender;
+import com.tms.dal.repository.VenderRepository;
 import com.tms.services.VenderServices;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

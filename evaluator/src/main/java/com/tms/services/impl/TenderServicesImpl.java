@@ -4,8 +4,8 @@ import com.tms.services.TenderServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tms.model.Tender;
-import com.tms.repository.TenderRepository;
+import com.tms.dal.model.Tender;
+import com.tms.dal.repository.TenderRepository;
 
 
 @Service

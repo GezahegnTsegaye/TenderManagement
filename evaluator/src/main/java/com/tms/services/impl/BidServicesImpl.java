@@ -4,8 +4,8 @@ import com.tms.services.BidServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tms.model.Bid;
-import com.tms.repository.BidRepository;
+import com.tms.dal.model.Bid;
+import com.tms.dal.repository.BidRepository;
 
 @Service
 public class BidServicesImpl implements BidServices {

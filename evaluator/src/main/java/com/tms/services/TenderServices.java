@@ -1,6 +1,6 @@
 package com.tms.services;
 
-import com.tms.model.Tender;
+import com.tms.dal.model.Tender;
 
 public interface TenderServices {
 

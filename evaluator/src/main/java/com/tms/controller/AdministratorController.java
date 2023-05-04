@@ -1,6 +1,6 @@
 package com.tms.controller;
 
-import com.tms.model.Administrator;
+import com.tms.dal.model.Administrator;
 
 import java.util.List;
 

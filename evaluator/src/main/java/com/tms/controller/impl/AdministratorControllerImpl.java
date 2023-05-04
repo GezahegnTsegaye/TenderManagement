@@ -3,7 +3,7 @@ package com.tms.controller.impl;
 import java.util.List;
 
 import com.tms.controller.AdministratorController;
-import com.tms.model.Administrator;
+import com.tms.dal.model.Administrator;
 import com.tms.services.AdministratorService;
 
 import org.springframework.beans.factory.annotation.Autowired;
