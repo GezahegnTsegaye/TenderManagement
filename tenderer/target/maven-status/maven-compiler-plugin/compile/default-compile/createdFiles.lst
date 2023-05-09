@@ -2,7 +2,6 @@ com\tms\dal\models\ConflictInterestDeclaration.class
 com\tms\dal\repository\PricingItemDetailRepository.class
 com\tms\dal\repository\CommunicationHistoryWithTendereeRepository.class
 com\tms\dal\repository\PortfolioRepository.class
-com\tms\dal\models\Bid.class
 com\tms\dal\repository\FinancialStatementRepository.class
 com\tms\dal\models\Tenderer.class
 com\tms\dal\models\TendererFeedback.class
@@ -23,7 +22,6 @@ com\tms\dal\models\WorkItemDetail.class
 com\tms\dal\models\FinancialStatement.class
 com\tms\dal\models\ProjectRole.class
 com\tms\dal\models\ContactDetails.class
-com\tms\dal\models\BidHistory.class
 com\tms\dal\models\WorkItem.class
 com\tms\dal\repository\ContactDetailsRepository.class
 com\tms\dal\repository\CertificationsRepository.class
@@ -48,6 +46,7 @@ com\tms\dal\repository\ConflictInterestDeclarationRepository.class
 com\tms\dal\repository\ProjectRoleRepository.class
 com\tms\dal\repository\ContractDetailRepository.class
 com\tms\dal\models\BusinessRegistration.class
+com\tms\dal\models\bid\BidHistory.class
 com\tms\dal\models\TendererAddress.class
 com\tms\dal\repository\TendererRepository.class
 com\tms\dal\repository\TenderRepository.class
@@ -60,4 +59,5 @@ com\tms\dal\models\BusinessCategory.class
 com\tms\dal\models\TendererRole.class
 com\tms\dal\models\Insurance.class
 com\tms\dal\repository\InsuranceRepository.class
+com\tms\dal\models\bid\Bid.class
 com\tms\dal\repository\ProjectRepository.class

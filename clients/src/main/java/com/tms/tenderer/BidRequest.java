@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter@NoArgsConstructor@Getter@AllArgsConstructor
 public class BidRequest {
 
-  private Long toBiderId;
+  private Long toBidId;
   private String toBidFullName;
   private  String message;
 }
