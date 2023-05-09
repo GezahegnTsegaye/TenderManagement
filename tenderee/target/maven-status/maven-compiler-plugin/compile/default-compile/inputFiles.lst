@@ -7,7 +7,12 @@ D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\controller\Tender
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\dto\AccountTypeDTO.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\TenderDetail.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\dto\TenderDTO.java
+D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\Contract.java
+D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\Contractor.java
+D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\RegisteredGood.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\TenderCategory.java
+D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\Tenderee.java
+D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\Criteria.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\repository\TenderDetail.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\DocumentType.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\Tender.java

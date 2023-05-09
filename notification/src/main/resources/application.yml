@@ -5,7 +5,7 @@ spring:
     name: notification
   datasource:
     password: password
-    url: jdbc:postgresql://localhost:5432/notification
+    url: jdbc:postgresql://localhost:5433/notification
     username: admin
   jpa:
     hibernate:

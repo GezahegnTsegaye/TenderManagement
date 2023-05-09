@@ -1,9 +1,6 @@
 package com.tms.dal.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,6 +9,7 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Setter@Getter@AllArgsConstructor@NoArgsConstructor
+@Entity@Table(name = "notification")
 public class Notification {
   @Id
   @SequenceGenerator(
@@ -28,4 +26,5 @@ public class Notification {
   private String sender;
   private String message;
   private LocalDateTime sentAt;
+
 }
