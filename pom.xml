@@ -19,7 +19,7 @@
         <module>tenderer</module>
         <module>committee</module>
         <module>evaluator</module>
-        <module>generals</module>
+        <module>clients</module>
         <module>user-service</module>
         <module>eureka-server</module>
         <module>api-gateway-service</module>
