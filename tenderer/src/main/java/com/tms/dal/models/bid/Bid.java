@@ -1,5 +1,7 @@
-package com.tms.models;
+package com.tms.dal.models.bid;
 
+import com.tms.dal.models.Tender;
+import com.tms.dal.models.Tenderer;
 import jakarta.persistence.*;
 
 @Entity
