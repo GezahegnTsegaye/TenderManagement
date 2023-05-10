@@ -1,10 +1,10 @@
 package com.tms.services.impl;
 
+import com.tms.dal.model.Tender;
 import com.tms.services.TenderServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tms.dal.model.Tender;
 import com.tms.dal.repository.TenderRepository;
 
 

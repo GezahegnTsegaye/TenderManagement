@@ -3,14 +3,20 @@ package com.tms.dal.models.bid;
 import com.tms.dal.models.Tender;
 import com.tms.dal.models.Tenderer;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Setter@Getter@NoArgsConstructor@AllArgsConstructor
 @Entity
 @Table(name = "bid")
 public class Bid {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id")
+  @Column(name = "bidId")
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "bid_seq_gen")
+  @SequenceGenerator(name = "bid_seq_gen", sequenceName = "bid_seq", allocationSize = 1)
   private Long id;
 
   @Column(name = "price")

@@ -1,14 +1,8 @@
 package com.tms.tenderer;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+public record BidRequest (
 
-@Setter@NoArgsConstructor@Getter@AllArgsConstructor
-public class BidRequest {
-
-  private Long toBidId;
-  private String toBidFullName;
-  private  String message;
-}
+   Long toBidId,
+   String toBidFullName,
+    String message)
+{}

@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Entity
 @Table(name = "insurance", indexes = {
-        @Index(name = "expirationDate", columnList = "expirationDate")
+        @Index(name = "expiration_date", columnList = "expiration_date")
 })
 public class Insurance {
 

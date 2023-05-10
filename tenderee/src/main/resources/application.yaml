@@ -6,7 +6,7 @@ spring:
     name: tenderee-service
   datasource:
     username: 'postgres'
-    url: jdbc:postgresql://localhost:5432/tenderee-service
+    url: jdbc:postgresql://localhost:5433/tenderee-service
     password: 'admin'
     jpa:
       properties:

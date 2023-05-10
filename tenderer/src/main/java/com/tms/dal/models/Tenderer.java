@@ -1,5 +1,6 @@
 package com.tms.dal.models;
 
+import com.tms.dal.models.bid.Bid;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -44,7 +45,6 @@ public class Tenderer {
   @JoinColumn(name = "tenderer_type_id")
   private TendererType tendererType;
 
-
   @OneToMany(mappedBy = "tenderer")
   private List<Reference> references;
 
@@ -56,6 +56,9 @@ public class Tenderer {
 
   @OneToMany(mappedBy = "tenderer")
   private List<Insurance> insuranceInformation;
+
+  @OneToMany(mappedBy = "tenderer")
+  private List<Bid> bids;
 
   // getters and setters
 }

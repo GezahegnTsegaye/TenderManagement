@@ -1,9 +1,8 @@
 package com.tms.tenderer;
 
-public class TindererRequest {
-
-  private Long toTindererId;
-  private String toTinderer;
-  private String message;
-
+public record TindererRequest(
+        Long toTindererId,
+        String toTinderer,
+        String message
+) {
 }

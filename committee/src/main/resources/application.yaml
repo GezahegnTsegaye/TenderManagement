@@ -1,2 +1,19 @@
 server:
   port: 9091
+
+spring:
+  application:
+    name: committee-service
+  datasource:
+
+    url: jdbc:postgresql://localhost:5433/committee-service
+    username: 'postgres'
+    password: 'admin'
+    jpa:
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          format_sql: 'true'
+      hibernate:
+        ddl-auto: update
+      show-sql: 'true'

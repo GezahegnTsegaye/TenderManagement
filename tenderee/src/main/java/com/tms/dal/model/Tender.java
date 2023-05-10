@@ -29,8 +29,9 @@ public class Tender {
     @Column(name = "closing_date")
     private LocalDateTime closingDate;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "tender_type")
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "tenderTypeId")
     private TenderType tenderType;
 
     @ManyToOne(fetch = FetchType.LAZY)

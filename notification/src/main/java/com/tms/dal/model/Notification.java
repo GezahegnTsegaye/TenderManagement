@@ -1,14 +1,11 @@
 package com.tms.dal.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
-@Setter@Getter@AllArgsConstructor@NoArgsConstructor
+@Setter@Getter@AllArgsConstructor@NoArgsConstructor@Builder
 @Entity@Table(name = "notification")
 public class Notification {
   @Id

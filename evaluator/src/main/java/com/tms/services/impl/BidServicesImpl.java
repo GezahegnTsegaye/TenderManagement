@@ -1,10 +1,10 @@
 package com.tms.services.impl;
 
+import com.tms.dal.models.bid.Bid;
 import com.tms.services.BidServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tms.dal.model.Bid;
 import com.tms.dal.repository.BidRepository;
 
 @Service

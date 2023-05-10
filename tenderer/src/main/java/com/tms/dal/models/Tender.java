@@ -12,8 +12,9 @@ import java.util.List;
 public class Tender {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "tender_id")
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tender_seq_gen")
+  @SequenceGenerator(name = "tender_seq_gen", sequenceName = "tender_seq", allocationSize = 1)
   private Long tenderId;
 
   @Column(name = "tender_name")
@@ -35,7 +36,7 @@ public class Tender {
   private LocalDate tenderEndDate;
 
 
-  @OneToMany(mappedBy = "tenderer", cascade = CascadeType.ALL, orphanRemoval = true)
+  @OneToMany(mappedBy = "tender", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Bid> bids = new ArrayList<>();
 
   // getters and setters

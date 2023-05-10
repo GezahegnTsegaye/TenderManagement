@@ -51,10 +51,6 @@ public class Users implements Serializable {
     @Column(name = "phone_number")
     private Integer phoneNumber;
 
-    @OneToMany(targetEntity = Bid.class, mappedBy = "users",
-            fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Bid> bids;
-
 
     private String status;
 

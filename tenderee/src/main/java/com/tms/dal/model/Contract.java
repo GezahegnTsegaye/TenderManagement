@@ -1,8 +1,10 @@
 package com.tms.dal.model;
 
 import jakarta.persistence.*;
+import org.springframework.cglib.core.Local;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "contract")
@@ -22,6 +24,16 @@ public class Contract {
   @Column(name = "amount")
   private BigDecimal amount;
 
+  private LocalDate startDate;
+  private LocalDate endDate;
+  private String status;
+  private String createdBy;
+  private LocalDate createdDate;
+  private String updatedBy;
+  private LocalDate updatedDate;
+  private String deletedBy;
+  private LocalDate deletedDate;
+
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "tender_id")
   private Tender tender;
@@ -29,6 +41,9 @@ public class Contract {
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "contractor_id")
   private Contractor contractor;
+
+
+
 
   // constructors, getters, and setters
 }

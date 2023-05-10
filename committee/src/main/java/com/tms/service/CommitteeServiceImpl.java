@@ -3,7 +3,7 @@ package com.tms.service;
 
 import com.tms.dal.dto.CommitteeDTO;
 import com.tms.dal.mapper.CommitteeMapper;
-import com.tms.dal.model.CommitteeRepository;
+import com.tms.dal.repository.CommitteeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
