@@ -6,30 +6,25 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 
-@Setter
-@Getter@AllArgsConstructor@NoArgsConstructor
+@Setter@Getter@AllArgsConstructor@NoArgsConstructor
 @Entity
 @Table(name = "vender")
 public class Vender implements Serializable{
-
-	
 	/**
 	 * 
 	 */
+	@Serial
 	private static final long serialVersionUID = 1L;
-
-
 
 	@Id
 	@Column(name = "vender_Id")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "vender_seq_gen")
 	@SequenceGenerator(name = "vender_seq_gen", sequenceName = "vender_seq",allocationSize = 1)
 	private Long id;
-
-
 
 	@Column(name = "First_name")
 	private String firstName;
@@ -53,6 +48,9 @@ public class Vender implements Serializable{
 
 	@Column(name = "phone_number")
 	private Integer phoneNumber;
+
+	@OneToMany(mappedBy = "vender", cascade = CascadeType.ALL)
+	private List<TenderOffer> tenderOffers;
 
 	
 	

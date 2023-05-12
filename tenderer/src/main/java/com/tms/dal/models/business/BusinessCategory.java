@@ -1,4 +1,4 @@
-package com.tms.dal.models;
+package com.tms.dal.models.business;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
