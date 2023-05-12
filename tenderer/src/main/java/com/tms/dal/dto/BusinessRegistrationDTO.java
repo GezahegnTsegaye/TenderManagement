@@ -1,6 +1,6 @@
 package com.tms.dal.dto;
 
-import com.tms.dal.models.BusinessCategory;
+import com.tms.dal.models.business.BusinessCategory;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
