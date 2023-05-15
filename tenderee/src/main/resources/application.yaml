@@ -2,18 +2,41 @@ server:
   port: 8081
 
 spring:
-  application:
-    name: tenderee-service
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration
   datasource:
-    username: 'postgres'
     url: jdbc:postgresql://localhost:5433/tenderee-service
-    password: 'admin'
-    jpa:
-      properties:
-        hibernate:
-          dialect: org.hibernate.dialect.PostgreSQLDialect
-          format_sql: 'true'
+    username: postgres
+    password: admin
+    driverClassName: org.postgresql.Driver
+  #     driver-class-name: org.postgresql.Driver
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+
+
+
+  # JPA and Hibernate #####
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+    generate-ddl: true
+    properties:
       hibernate:
-        ddl-auto: update
-      show-sql: 'true'
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        ddl-auto: create-drop
+        show_sql: true
+        format_sql: true
+
+
+  output:
+    ansi:
+      enabled: detect
+
+#
+logging:
+  level:
+    org.hibernate: info
+    org.springframework.web: debug
 

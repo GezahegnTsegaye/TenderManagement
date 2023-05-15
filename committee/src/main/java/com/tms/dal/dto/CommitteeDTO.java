@@ -9,4 +9,6 @@ import lombok.Setter;
 public class CommitteeDTO {
 
   private Long committeeId;
+  private String discussOnTender;
+  private String resultTender;
 }

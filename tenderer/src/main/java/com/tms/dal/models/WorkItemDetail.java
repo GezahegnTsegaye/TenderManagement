@@ -12,8 +12,9 @@ import lombok.Setter;
 public class WorkItemDetail {
 
     @Id
-    @GeneratedValue(generator = "work_item_detail_id_gen", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "work_item_detail_id_gen", sequenceName = "work_item_detail_id_seq", allocationSize = 1)
+//    @GeneratedValue(generator = "work_item_detail_id_gen", strategy = GenerationType.SEQUENCE)
+//    @SequenceGenerator(name = "work_item_detail_id_gen", sequenceName = "work_item_detail_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String itemTitles;

@@ -41,5 +41,10 @@ public class ContractDetail {
   @JoinColumn(name = "tender_id")
   private Tender tender;
 
+  @ManyToOne(fetch = FetchType.EAGER)
+  @JoinColumn(name = "contractTypeId")
+  private ContractType contractType;
+
+
   // getters and setters
 }

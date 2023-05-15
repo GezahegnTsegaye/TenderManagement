@@ -13,8 +13,9 @@ import lombok.Setter;
 public class PricingItemDetail {
 
   @Id
-  @GeneratedValue(generator = "account_type_id_gen", strategy = GenerationType.SEQUENCE)
-  @SequenceGenerator(name = "account_type_id_gen", sequenceName = "account_type_id_seq", allocationSize = 1)
+//  @GeneratedValue(generator = "account_type_id_gen", strategy = GenerationType.SEQUENCE)
+//  @SequenceGenerator(name = "account_type_id_gen", sequenceName = "account_type_id_seq", allocationSize = 1)
+  @GeneratedValue( strategy = GenerationType.IDENTITY)
   private Long id;
   private String description;
   private Double price;

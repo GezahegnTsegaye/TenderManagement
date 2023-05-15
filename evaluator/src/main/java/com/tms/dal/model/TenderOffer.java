@@ -9,14 +9,18 @@ import lombok.Setter;
 import java.util.Map;
 
 
-@Setter@Getter@NoArgsConstructor@AllArgsConstructor
-@Entity@Table(name = "tender_offer")
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "tender_offer")
 public class TenderOffer {
 
   @Id
   @Column(name = "tender_offer_Id")
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tender_offer_Id_gen")
-  @SequenceGenerator(name = "tender_offer_Id_gen", sequenceName = "tender_offer_Id_seq",allocationSize = 1)
+  @SequenceGenerator(name = "tender_offer_Id_gen", sequenceName = "tender_offer_Id_seq", allocationSize = 1)
   private Long id;
 
   @ManyToOne(fetch = FetchType.LAZY)
@@ -26,8 +30,13 @@ public class TenderOffer {
   private Double price;
 
   private String quality;
-
+  @Column(name = "delivery_time")
   private Integer deliveryTime;
+
+  @Column(name = "overall_score")
+  private Double overallScore;
+  @Column(name = "composite_bid")
+  private Double compositeBid;
 
   @ElementCollection
   @CollectionTable(name = "attribute_offers",
@@ -39,6 +48,16 @@ public class TenderOffer {
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "tender_id")
   private Tender tender;
+
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "attribute_value_id")
+  private AttributeValue attributeValue;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "criteria_id")
+  private Criteria criteria;
+
 
 
 }

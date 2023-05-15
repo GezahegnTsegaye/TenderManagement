@@ -14,8 +14,9 @@ import java.time.LocalDateTime;
 public class WorkItem {
 
     @Id
-    @GeneratedValue(generator = "work_item_id_gen", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "work_item_id_gen", sequenceName = "work_item_id_seq", allocationSize = 1)
+//    @GeneratedValue(generator = "work_item_id_gen", strategy = GenerationType.SEQUENCE)
+//    @SequenceGenerator(name = "work_item_id_gen", sequenceName = "work_item_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String itemCategory;
     private LocalDateTime createAt;

@@ -30,5 +30,5 @@ public class Bid {
   @JoinColumn(name = "tenderer_id")
   private Tenderer tenderer;
 
-  // constructors, getters, and setters
+
 }

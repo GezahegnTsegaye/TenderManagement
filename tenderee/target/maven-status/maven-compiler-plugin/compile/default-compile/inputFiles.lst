@@ -1,8 +1,8 @@
-D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\repository\Tender.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\TenderType.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\controller\TendereeRequest.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\dto\TenderDTO.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\repository\TenderDetailRepository.java
+D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\repository\TenderTypeRepository.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\Contractor.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\RegisteredGood.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\TenderCategory.java
@@ -11,6 +11,7 @@ D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\Criteri
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\repository\PaymentTypeRepository.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\repository\ContractRepository.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\PaymentMode.java
+D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\repository\AccountTypeRepository.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\PaymentType.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\repository\DocumentTypeRepository.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\controller\TendereeRegistrationRequest.java
@@ -24,7 +25,6 @@ D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\dto\AccountTy
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\TenderDetail.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\Contract.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\repository\TenderCategoryRepository.java
-D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\repository\TenderDetail.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\DocumentType.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\model\Tender.java
 D:\end of 2022\TenderManagement\tenderee\src\main\java\com\tms\dal\repository\CriteriaRepository.java

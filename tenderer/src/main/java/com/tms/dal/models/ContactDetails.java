@@ -15,6 +15,8 @@ import lombok.Setter;
 public class ContactDetails {
 
   @Id
+//  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "contact_detail_id_gen")
+//  @SequenceGenerator(name = "contact_detail_id_gen", sequenceName = "contact_detail_id_seq", allocationSize = 1)
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "contact_id")
   private Long contactId;
@@ -39,12 +41,12 @@ public class ContactDetails {
 
   @Column(name = "state")
   private String state;
-
+  private String street;
+  private int streetNumber;
   @Column(name = "zip_code")
   private String zipCode;
 
   @Column(name = "country")
   private String country;
 
-  // getters and setters
 }

@@ -13,8 +13,9 @@ public class Tender {
 
   @Id
   @Column(name = "tender_id")
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tender_seq_gen")
-  @SequenceGenerator(name = "tender_seq_gen", sequenceName = "tender_seq", allocationSize = 1)
+//  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tender_seq_gen")
+//  @SequenceGenerator(name = "tender_seq_gen", sequenceName = "tender_seq", allocationSize = 1)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long tenderId;
 
   @Column(name = "tender_name")

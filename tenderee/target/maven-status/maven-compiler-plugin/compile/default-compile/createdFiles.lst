@@ -1,11 +1,9 @@
-com\tms\dal\repository\TenderDetail.class
 com\tms\dal\model\AccountType.class
 com\tms\dal\dto\TenderDTO.class
 com\tms\dal\repository\ContractRepository.class
 com\tms\dal\model\PaymentMode.class
 com\tms\dal\repository\ContractorRepository.class
 com\tms\dal\repository\TenderDetailRepository.class
-com\tms\dal\repository\Tender.class
 com\tms\TendereeApplication.class
 com\tms\dal\model\RegisteredGood.class
 com\tms\dal\model\Criteria.class
@@ -19,9 +17,11 @@ com\tms\dal\model\Contractor.class
 com\tms\dal\model\Tender.class
 com\tms\dal\model\TenderDetail.class
 com\tms\dal\dto\AccountTypeDTO.class
+com\tms\dal\repository\TenderTypeRepository.class
 com\tms\controller\TendereeRegistrationRequest.class
 com\tms\dal\repository\TenderRepository.class
 com\tms\dal\model\TenderCategory.class
+com\tms\dal\repository\AccountTypeRepository.class
 com\tms\dal\model\Contract.class
 com\tms\dal\repository\DocumentTypeRepository.class
 com\tms\dal\model\PaymentType.class
