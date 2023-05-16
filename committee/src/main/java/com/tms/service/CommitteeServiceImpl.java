@@ -17,6 +17,7 @@ public class CommitteeServiceImpl implements CommitteeService{
   @Override
   public void createCommittee(CommitteeDTO  committeeDTO){
     committeeRepository.save(committeeMapper.toEntity(committeeDTO));
+
   }
 
 

@@ -9,10 +9,9 @@ import com.tms.dal.model.Tender;
 import com.tms.dal.model.TenderOffer;
 import com.tms.dal.repository.TenderOfferRepository;
 import com.tms.dal.repository.TenderRepository;
+import com.tms.exceptions.EntityNotFoundException;
 import com.tms.services.EvaluatorService;
-import jakarta.ws.rs.NotFoundException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -26,11 +25,9 @@ public class EvaluatorServiceImpl implements EvaluatorService {
 
   private final TenderOfferRepository tenderOfferRepository;
 
-  private final TenderRepository tenderRepository;
-
   public EvaluationResultDTO evaluateTenderOffer(Long tenderOfferId, Long evaluatorId) {
     TenderOffer tenderOffer = tenderOfferRepository.findById(tenderOfferId)
-            .orElseThrow(() -> new NotFoundException("Tender offer not found with ID: " + tenderOfferId));
+            .orElseThrow(() -> new EntityNotFoundException("Tender offer not found with ID: " + tenderOfferId));
 
     Tender tender = tenderOffer.getTender();
     List<EvaluationCriterion> criteria = tender.getEvaluationCriteria();
@@ -73,7 +70,7 @@ public class EvaluatorServiceImpl implements EvaluatorService {
     // This method can be implemented based on your application's data structure and relationships
     // For example, you can have a map of attribute name and corresponding offer values in the TenderOffer entity
     TenderOffer tenderOffer = tenderOfferRepository.findById(_tenderOffer.getId())
-            .orElseThrow(() -> new NotFoundException("Tender offer not found with ID: " + _tenderOffer.getId()));
+            .orElseThrow(() -> new EntityNotFoundException("Tender offer not found with ID: " + _tenderOffer.getId()));
 
     return tenderOffer.getAttributeOffers();
   }

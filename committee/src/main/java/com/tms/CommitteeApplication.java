@@ -9,7 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan("com.tms.dal.model")
 public class CommitteeApplication {
 
-
     public static void main(String[] args) {
         new SpringApplicationBuilder(CommitteeApplication.class).run(args);
     }

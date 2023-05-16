@@ -34,7 +34,6 @@
         <spring.boot.maven.plugin.version>3.0.6</spring.boot.maven.plugin.version>
         <spring.boot.dependencies.version>3.0.6</spring.boot.dependencies.version>
         <spring.cloud-version>2022.0.2</spring.cloud-version>
-<!--        <micrometer-tracing.version>1.1.0</micrometer-tracing.version>-->
 
         <image>gezahegn/${project.artifactId}:${project.version}</image>
     </properties>
@@ -55,13 +54,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-<!--            <dependency>-->
-<!--                <groupId>io.micrometer</groupId>-->
-<!--                <artifactId>micrometer-tracing-bom</artifactId>-->
-<!--                <version>${micrometer-tracing.version}</version>-->
-<!--                <type>pom</type>-->
-<!--                <scope>import</scope>-->
-<!--            </dependency>-->
+
         </dependencies>
     </dependencyManagement>
 
@@ -70,10 +63,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
@@ -101,7 +91,7 @@
                     <version>3.1.4</version>
                     <configuration>
                         <from>
-                            <image>eclipse-temurin:17@sha256:2b47a8ea946ce1e5365a1562414ed576e378b7b670cadff3fb98ebecf2890cdc</image>
+                            <image>eclipse-tearing:17@sha256:2b47a8ea946ce1e5365a1562414ed576e378b7b670cadff3fb98ebecf2890cdc</image>
                             <platforms>
                                 <platform>
                                     <architecture>arm64</architecture>
