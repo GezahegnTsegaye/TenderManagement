@@ -1,6 +1,6 @@
 package com.tms.services;
 
-import com.tms.model.Vender;
+import com.tms.dal.model.Vender;
 
 public interface VenderServices {
 

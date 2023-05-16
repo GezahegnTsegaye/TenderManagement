@@ -4,36 +4,45 @@ package com.tms.dal.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Setter@Getter @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="tender")
+@Table(name = "tender")
 public class Tender {
 
     @Id
-    @GeneratedValue(generator = "tender_id_gen", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "tender_id_gen", sequenceName = "tender_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
-    private String tenderReferenceNumber;
-    @ManyToOne
-    @JoinColumn(name = "tender_type_id")
+
+    @Column(name = "title")
+    private String title;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "closing_date")
+    private LocalDateTime closingDate;
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "tenderTypeId")
     private TenderType tenderType;
-    @ManyToOne
-    @JoinColumn(name = "tender_category_id")
-    private TenderCategory tenderCategory;
-    @ManyToOne
-    @JoinColumn(name = "account_type_id")
-    private AccountType accountType;
 
-    private Boolean reBidSubmission;
-    private Boolean withdrawalBids;
-    private Boolean offlineSubmission;
-    private Boolean technicalEvaluation;
-    private Boolean multiCurrency;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "tenderee_id")
+    private Tenderee tenderee;
 
+    @OneToMany(mappedBy = "tender", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Criteria> criteriaList = new ArrayList<>();
 
+    @OneToMany(mappedBy = "tender", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RegisteredGood> registeredGoodList = new ArrayList<>();
 
+    // constructors, getters, and setters
 }

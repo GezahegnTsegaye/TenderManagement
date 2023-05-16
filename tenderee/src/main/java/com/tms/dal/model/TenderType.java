@@ -4,10 +4,12 @@ package com.tms.dal.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Set;
+
 
 @Setter@Getter@ToString@AllArgsConstructor@NoArgsConstructor
 @Entity
-@Table
+@Table(name = "tender_type")
 public class TenderType {
 
     @Id
@@ -17,5 +19,7 @@ public class TenderType {
 
     private String name;
     private String description;
+    @OneToMany(mappedBy = "tenderType")
+    private Set<Tender> tenders;
 
 }

@@ -19,11 +19,12 @@
         <module>tenderer</module>
         <module>committee</module>
         <module>evaluator</module>
-        <module>generals</module>
+        <module>clients</module>
         <module>user-service</module>
-        <module>discovery-service</module>
-        <module>gateway-service</module>
-        <module>config-service</module>
+        <module>eureka-server</module>
+        <module>api-gateway-service</module>
+        <module>amqp</module>
+        <module>notification</module>
     </modules>
 
     <properties>
@@ -33,6 +34,8 @@
         <spring.boot.maven.plugin.version>3.0.6</spring.boot.maven.plugin.version>
         <spring.boot.dependencies.version>3.0.6</spring.boot.dependencies.version>
         <spring.cloud-version>2022.0.2</spring.cloud-version>
+
+        <image>gezahegn/${project.artifactId}:${project.version}</image>
     </properties>
 
     <dependencyManagement>
@@ -51,6 +54,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -59,19 +63,15 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
     </dependencies>
 
-
     <build>
-        <pluginManagement>
+        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
@@ -91,13 +91,11 @@
                     <version>3.1.4</version>
                     <configuration>
                         <from>
-                            <image>
-                                eclipse-temurin:17@sha256:2b47a8ea946ce1e5365a1562414ed576e378b7b670cadff3fb98ebecf2890cdc
-                            </image>
-
+                            <image>eclipse-tearing:17@sha256:2b47a8ea946ce1e5365a1562414ed576e378b7b670cadff3fb98ebecf2890cdc</image>
                             <platforms>
                                 <platform>
                                     <architecture>arm64</architecture>
+                                    <os>linux</os>
                                 </platform>
                                 <platform>
                                     <architecture>amd64</architecture>
@@ -120,7 +118,6 @@
                         </execution>
                     </executions>
                 </plugin>
-
             </plugins>
         </pluginManagement>
         <plugins>
