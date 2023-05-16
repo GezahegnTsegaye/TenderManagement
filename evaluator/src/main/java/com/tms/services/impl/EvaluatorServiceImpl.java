@@ -8,7 +8,6 @@ import com.tms.dal.model.EvaluationCriterion;
 import com.tms.dal.model.Tender;
 import com.tms.dal.model.TenderOffer;
 import com.tms.dal.repository.TenderOfferRepository;
-import com.tms.dal.repository.TenderRepository;
 import com.tms.exceptions.EntityNotFoundException;
 import com.tms.services.EvaluatorService;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +24,7 @@ public class EvaluatorServiceImpl implements EvaluatorService {
 
   private final TenderOfferRepository tenderOfferRepository;
 
+  @Override
   public EvaluationResultDTO evaluateTenderOffer(Long tenderOfferId, Long evaluatorId) {
     TenderOffer tenderOffer = tenderOfferRepository.findById(tenderOfferId)
             .orElseThrow(() -> new EntityNotFoundException("Tender offer not found with ID: " + tenderOfferId));
