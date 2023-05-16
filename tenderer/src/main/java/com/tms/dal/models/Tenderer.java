@@ -14,7 +14,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "tenderer")
+@Table(name = "tenderer", indexes = {
+        @Index(name = "idx_tenderer_name", columnList = "name")
+})
 public class Tenderer {
 
   @Id

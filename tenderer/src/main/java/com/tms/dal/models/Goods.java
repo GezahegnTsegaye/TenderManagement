@@ -5,15 +5,20 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "goods")
+@Table(name = "goods", indexes = {
+        @Index(name = "idx_goods_name", columnList = "goods_name")
+})
 public class Goods {
 
   @Id
@@ -37,5 +42,13 @@ public class Goods {
   @JoinColumn(name = "tender_id")
   private Tender tender;
 
-  // getters and setters
+  @CreatedDate
+  @Column(name = "created_date")
+  private LocalDateTime createdDate;
+
+  @LastModifiedDate
+  @Column(name = "last_modified_date")
+  private LocalDateTime lastModifiedDate;
+
+// getters and setters
 }

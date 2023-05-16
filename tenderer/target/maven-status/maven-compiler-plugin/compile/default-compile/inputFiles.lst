@@ -7,6 +7,7 @@ D:\end of 2022\TenderManagement\tenderer\src\main\java\com\tms\dal\models\Tender
 D:\end of 2022\TenderManagement\tenderer\src\main\java\com\tms\dal\models\ConflictInterestDeclaration.java
 D:\end of 2022\TenderManagement\tenderer\src\main\java\com\tms\dal\repository\ContactDetailsRepository.java
 D:\end of 2022\TenderManagement\tenderer\src\main\java\com\tms\dal\models\TendererType.java
+D:\end of 2022\TenderManagement\tenderer\src\main\java\com\tms\service\ContactDetailsService.java
 D:\end of 2022\TenderManagement\tenderer\src\main\java\com\tms\dal\models\TendererFeedback.java
 D:\end of 2022\TenderManagement\tenderer\src\main\java\com\tms\dal\dto\BidHistoryDTO.java
 D:\end of 2022\TenderManagement\tenderer\src\main\java\com\tms\dal\repository\ExperienceRepository.java
@@ -62,6 +63,7 @@ D:\end of 2022\TenderManagement\tenderer\src\main\java\com\tms\dal\repository\Te
 D:\end of 2022\TenderManagement\tenderer\src\main\java\com\tms\dal\models\business\BusinessCategory.java
 D:\end of 2022\TenderManagement\tenderer\src\main\java\com\tms\dal\repository\PaymentMethodRepository.java
 D:\end of 2022\TenderManagement\tenderer\src\main\java\com\tms\dal\repository\ProjectRoleRepository.java
+D:\end of 2022\TenderManagement\tenderer\src\main\java\com\tms\service\ContactDetailServiceImpl.java
 D:\end of 2022\TenderManagement\tenderer\src\main\java\com\tms\dal\repository\ContractDetailRepository.java
 D:\end of 2022\TenderManagement\tenderer\src\main\java\com\tms\dal\models\WorkItemDetail.java
 D:\end of 2022\TenderManagement\tenderer\src\main\java\com\tms\dal\repository\DeliveryMethodRepository.java

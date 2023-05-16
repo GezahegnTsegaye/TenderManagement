@@ -13,7 +13,9 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "feedback_history")
+@Table(name = "feedback_history", indexes = {
+        @Index(name = "idx_feedbackhistory", columnList = "feedback_date")
+})
 public class FeedbackHistory {
 
   @Id

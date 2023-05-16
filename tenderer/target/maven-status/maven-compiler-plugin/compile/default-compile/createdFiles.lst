@@ -11,6 +11,7 @@ com\tms\dal\models\TendererFeedback.class
 com\tms\dal\models\Certifications.class
 com\tms\dal\dto\BidDTO.class
 com\tms\dal\dto\BusinessRegistrationDTO.class
+com\tms\service\ContactDetailServiceImpl.class
 com\tms\dal\models\Goods.class
 com\tms\dal\dto\BidHistoryDTO.class
 com\tms\dal\models\ContractDetail.class
@@ -69,5 +70,6 @@ com\tms\dal\models\Reference.class
 com\tms\dal\models\TendererRole.class
 com\tms\dal\models\Insurance.class
 com\tms\dal\repository\InsuranceRepository.class
+com\tms\service\ContactDetailsService.class
 com\tms\dal\models\bid\Bid.class
 com\tms\dal\repository\ProjectRepository.class
