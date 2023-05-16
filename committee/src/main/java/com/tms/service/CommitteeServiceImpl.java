@@ -1,25 +1,57 @@
 package com.tms.service;
 
 
-import com.tms.dal.dto.CommitteeDTO;
-import com.tms.dal.mapper.CommitteeMapper;
+import com.tms.dal.model.Committee;
 import com.tms.dal.repository.CommitteeRepository;
-import lombok.RequiredArgsConstructor;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
-@RequiredArgsConstructor
+import java.util.List;
+
 @Service
-public class CommitteeServiceImpl implements CommitteeService{
+public class CommitteeServiceImpl implements CommitteeService {
+
 
   private final CommitteeRepository committeeRepository;
-  private final CommitteeMapper committeeMapper;
 
-  @Override
-  public void createCommittee(CommitteeDTO  committeeDTO){
-    committeeRepository.save(committeeMapper.toEntity(committeeDTO));
-
+  public CommitteeServiceImpl(CommitteeRepository committeeRepository) {
+    this.committeeRepository = committeeRepository;
   }
 
+
+  @Override
+  public List<Committee> getAllCommittees() {
+    return committeeRepository.findAll();
+  }
+
+  @Override
+  public Committee getCommitteeById(Long id) {
+    return committeeRepository.findById(id)
+            .orElseThrow(() -> new EntityNotFoundException("Committee not found"));
+  }
+
+  @Override
+  public Committee createCommittee(Committee committee) {
+    return committeeRepository.save(committee);
+  }
+
+  @Override
+  public Committee updateCommittee(Long id, Committee committee) {
+    Committee existingCommittee = committeeRepository.findById(id)
+            .orElseThrow(() -> new EntityNotFoundException("Committee not found"));
+
+    existingCommittee.setFirstName(committee.getFirstName());
+    existingCommittee.setLastName(committee.getLastName());
+    existingCommittee.setEmployeePosition(committee.getEmployeePosition());
+    existingCommittee.setAddress(committee.getAddress());
+
+    return committeeRepository.save(existingCommittee);
+  }
+
+  @Override
+  public void deleteCommittee(Long id) {
+    committeeRepository.deleteById(id);
+  }
 
 
 }

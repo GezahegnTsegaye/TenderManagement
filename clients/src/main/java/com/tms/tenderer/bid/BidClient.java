@@ -1,4 +1,4 @@
-package com.tms.tenderer;
+package com.tms.tenderer.bid;
 
 
 import org.springframework.cloud.openfeign.FeignClient;
@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 )
 public interface BidClient {
 
-  @PostMapping("api/v2/bid")
+  @PostMapping("api/bid")
   void sendBidNotification(BidRequest bidRequest);
 }

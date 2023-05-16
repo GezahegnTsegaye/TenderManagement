@@ -1,4 +1,4 @@
-package com.tms.tenderer;
+package com.tms.tenderer.bid;
 
 public record BidRequest (
 
