@@ -1,10 +1,13 @@
 package com.tms.dal.models;
 
+import com.tms.dal.models.bid.Supplier;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Setter
 @Getter
@@ -35,18 +38,20 @@ public class ContactDetails {
 
   @Column(name = "postal_address")
   private String postalAddress;
-
   @Column(name = "city")
   private String city;
-
   @Column(name = "state")
   private String state;
+  @Column(name = "street")
   private String street;
+  @Column(name = "street_number")
   private int streetNumber;
   @Column(name = "zip_code")
   private String zipCode;
-
   @Column(name = "country")
   private String country;
+
+  @OneToMany(mappedBy = "contactDetails")
+  private List<Supplier> suppliers;
 
 }

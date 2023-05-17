@@ -1,6 +1,7 @@
-package com.tms.dal.models;
+package com.tms.dal.models.bid;
 
-
+import com.tms.dal.models.ContactDetails;
+import com.tms.dal.models.Goods;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,22 +18,29 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "item_categories")
-public class ItemCategory {
+@Table(name = "suppliers")
+public class Supplier {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "category_id")
-  private Long categoryId;
+  @Column(name = "supplier_id")
+  private Long supplierId;
 
-  @Column(name = "category_name")
-  private String categoryName;
+  @Column(name = "name")
+  private String name;
 
-  @OneToMany(mappedBy = "itemCategory", cascade = CascadeType.ALL)
-  private List<Item> items;
+  @Column(name = "address")
+  private String address;
 
-  @OneToMany(mappedBy = "itemCategory", cascade = CascadeType.ALL)
-  private List<Attribute> attributes;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "contactDetailsId")
+  private ContactDetails contactDetails;
+
+  @OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL)
+  private List<Bid> bids;
+
+  @OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL)
+  private List<Goods> goods;
 
   @CreatedDate
   @Column(name = "created_date")
@@ -41,4 +49,5 @@ public class ItemCategory {
   @LastModifiedDate
   @Column(name = "last_modified_date")
   private LocalDateTime lastModifiedDate;
+
 }

@@ -59,10 +59,7 @@ public class Tenderer {
   @OneToMany(mappedBy = "tenderer")
   private List<Insurance> insuranceInformation;
 
-  @OneToMany(mappedBy = "tenderer")
-  private List<Bid> bids;
 
-  // getters and setters
 }
 
 

@@ -1,6 +1,5 @@
 package com.tms.dal.models;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,29 +9,29 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "item_categories")
-public class ItemCategory {
+@Table(name = "attributes")
+public class Attribute {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "category_id")
-  private Long categoryId;
+  @Column(name = "attribute_id")
+  private Long attributeId;
 
-  @Column(name = "category_name")
-  private String categoryName;
+  @Column(name = "attribute_name")
+  private String attributeName;
 
-  @OneToMany(mappedBy = "itemCategory", cascade = CascadeType.ALL)
-  private List<Item> items;
+  @Column(name = "attribute_value")
+  private String attributeValue;
 
-  @OneToMany(mappedBy = "itemCategory", cascade = CascadeType.ALL)
-  private List<Attribute> attributes;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "category_id")
+  private ItemCategory itemCategory;
 
   @CreatedDate
   @Column(name = "created_date")

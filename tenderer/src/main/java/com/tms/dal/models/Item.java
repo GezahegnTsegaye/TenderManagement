@@ -1,6 +1,5 @@
 package com.tms.dal.models;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,22 +16,23 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "item_categories")
-public class ItemCategory {
+@Table(name = "items")
+public class Item {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "category_id")
-  private Long categoryId;
+  @Column(name = "item_id")
+  private Long itemId;
 
-  @Column(name = "category_name")
-  private String categoryName;
+  @Column(name = "item_name")
+  private String itemName;
 
-  @OneToMany(mappedBy = "itemCategory", cascade = CascadeType.ALL)
-  private List<Item> items;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "category_id")
+  private ItemCategory itemCategory;
 
-  @OneToMany(mappedBy = "itemCategory", cascade = CascadeType.ALL)
-  private List<Attribute> attributes;
+  @OneToMany(mappedBy = "item", cascade = CascadeType.ALL)
+  private List<Goods> goods;
 
   @CreatedDate
   @Column(name = "created_date")

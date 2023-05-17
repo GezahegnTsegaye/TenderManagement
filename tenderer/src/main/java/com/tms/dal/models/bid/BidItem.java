@@ -1,6 +1,6 @@
-package com.tms.dal.models;
+package com.tms.dal.models.bid;
 
-
+import com.tms.dal.models.Item;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,30 +9,35 @@ import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "item_categories")
-public class ItemCategory {
+@Table(name = "bid_items")
+public class BidItem {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "category_id")
-  private Long categoryId;
+  @Column(name = "bid_item_id")
+  private Long bidItemId;
 
-  @Column(name = "category_name")
-  private String categoryName;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "bid_id")
+  private Bid bid;
 
-  @OneToMany(mappedBy = "itemCategory", cascade = CascadeType.ALL)
-  private List<Item> items;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "item_id")
+  private Item item;
 
-  @OneToMany(mappedBy = "itemCategory", cascade = CascadeType.ALL)
-  private List<Attribute> attributes;
+  @Column(name = "quantity")
+  private int quantity;
+
+  @Column(name = "proposed_price")
+  private BigDecimal proposedPrice;
 
   @CreatedDate
   @Column(name = "created_date")
@@ -41,4 +46,5 @@ public class ItemCategory {
   @LastModifiedDate
   @Column(name = "last_modified_date")
   private LocalDateTime lastModifiedDate;
+
 }

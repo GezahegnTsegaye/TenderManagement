@@ -7,16 +7,17 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class BidDTO {
-    private Long bidId;
-    private TenderDTO tender;
-    private List<BidItemDTO> bidItems;
-    private SupplierDTO supplier;
-
+public class BidItemDTO {
+  private Long bidItemId;
+  private BidDTO bid;
+  private ItemDTO item;
+  private int quantity;
+  private BigDecimal proposedPrice;
+  private LocalDateTime createdDate;
+  private LocalDateTime lastModifiedDate;
 }
