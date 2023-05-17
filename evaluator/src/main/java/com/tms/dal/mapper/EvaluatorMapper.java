@@ -1,6 +1,5 @@
 package com.tms.dal.mapper;
 
-import com.tms.dal.dto.EvaluationResultDTO;
 import com.tms.dal.dto.EvaluatorDTO;
 import com.tms.dal.model.Evaluator;
 import org.mapstruct.Mapper;

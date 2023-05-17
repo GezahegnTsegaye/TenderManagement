@@ -1,6 +1,5 @@
 package com.tms.dal.models;
 
-import com.tms.dal.models.bid.Bid;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
