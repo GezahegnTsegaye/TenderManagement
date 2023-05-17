@@ -1,9 +1,7 @@
 package com.tms.dal.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 
@@ -13,8 +11,11 @@ import lombok.*;
 public class TenderCategory {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "category_name")
     private String name;
+    @Column(name = "category_description")
     private String description;
 
 }

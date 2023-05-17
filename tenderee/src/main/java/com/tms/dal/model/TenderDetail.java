@@ -13,11 +13,19 @@ public class TenderDetail {
     @GeneratedValue(generator = "tender_detail_id_gen", strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name = "tender_detail_id_gen", sequenceName = "tender_detail_id_seq", allocationSize = 1)
     private Long id;
+    @Column(name = "payment_mod")
     private String paymentMod;
+    @Column(name = "cover_content")
     private String coverContent;
+    @Column(name = "document_description")
     private String documentDescription;
-    @ManyToOne
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "document_type_id")
     private DocumentType documentType;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "tender_id")
+    private Tender tender;
 
 }
