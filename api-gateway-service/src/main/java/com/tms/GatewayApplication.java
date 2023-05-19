@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 //@EnableEurekaClient
 @SpringBootApplication
+
 public class GatewayApplication {
 
 

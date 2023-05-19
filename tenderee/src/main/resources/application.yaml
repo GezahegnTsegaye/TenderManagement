@@ -1,42 +1,53 @@
 server:
-  port: 8083
+  port: 0
 
 spring:
-  autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration
+  application:
+    name: tenderee-service
+  #
   datasource:
     url: jdbc:postgresql://localhost:5433/tenderee-service
-    username: postgres
-    password: admin
-    driverClassName: org.postgresql.Driver
-  #     driver-class-name: org.postgresql.Driver
-  jackson:
-    serialization:
-      WRITE_DATES_AS_TIMESTAMPS: false
-
-
-
-  # JPA and Hibernate #####
-  jpa:
-    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
-    generate-ddl: true
-    properties:
+    username: 'postgres'
+    password: 'admin'
+    jpa:
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          format_sql: 'true'
       hibernate:
-        jdbc:
-          lob:
-            non_contextual_creation: true
-        ddl-auto: create-drop
-        show_sql: true
-        format_sql: true
+        ddl-auto: update
+      show-sql: 'true'
+  #
+  devtools:
+    restart:
+      enabled: 'true'
+  #
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: 'true'
 
-
-  output:
-    ansi:
-      enabled: detect
 
 #
-logging:
-  level:
-    org.hibernate: info
-    org.springframework.web: debug
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+# eureka configuration
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registerWithEureka: true
+    fetchRegistry: true
+  instance:
+    instanceId: '${spring.application.name}:${spring.application.instance_id:${random.value}}'
+    statusPageUrlPath: /actuator/info
+    healthCheckUrlPath: /actuator/health
+    preferIpAddress: true
+    hostname: localhost
+
 

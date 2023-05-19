@@ -15,5 +15,5 @@ public class BusinessRegistrationDTO {
   private String businessAddress;
   private String businessContactDetails;
   private LocalDate businessRegistrationDate;
-  private BusinessCategory businessCategory;
+  private BusinessCategoryDTO businessCategoryDTO;
 }

@@ -45,14 +45,14 @@ public class EvaluatorServiceImpl implements EvaluatorService {
     }
 
     // Perform automatic evaluation
-    Map<String, Object> attributeOffers = retrieveAttributeOffers(tenderOffer); // Retrieve attribute offers based on the tender offer
+//    Map<String, Object> attributeOffers = retrieveAttributeOffers(tenderOffer); // Retrieve attribute offers based on the tender offer
 
     Map<String, Double> attributeScores = new HashMap<>();
-    for (String attributeName : attributeOffers.keySet()) {
-      Object attributeValue = attributeOffers.get(attributeName);
-      Double score = evaluateAttribute(attributeName, attributeValue, criterionPreferences);
-      attributeScores.put(attributeName, score);
-    }
+//    for (String attributeName : attributeOffers.keySet()) {
+//      Object attributeValue = attributeOffers.get(attributeName);
+//      Double score = evaluateAttribute(attributeName, attributeValue, criterionPreferences);
+//      attributeScores.put(attributeName, score);
+//    }
 
     double overallScore = calculateOverallScore(attributeScores, criterionWeights);
 
@@ -66,15 +66,15 @@ public class EvaluatorServiceImpl implements EvaluatorService {
     return evaluationResultDTO;
   }
 
-  private Map<String, Object> retrieveAttributeOffers(TenderOffer _tenderOffer) {
-    // Retrieve attribute offers from the tender offer
-    // This method can be implemented based on your application's data structure and relationships
-    // For example, you can have a map of attribute name and corresponding offer values in the TenderOffer entity
-    TenderOffer tenderOffer = tenderOfferRepository.findById(_tenderOffer.getId())
-            .orElseThrow(() -> new EntityNotFoundException("Tender offer not found with ID: " + _tenderOffer.getId()));
-
-    return tenderOffer.getAttributeOffers();
-  }
+//  private Map<String, Object> retrieveAttributeOffers(TenderOffer _tenderOffer) {
+//    // Retrieve attribute offers from the tender offer
+//    // This method can be implemented based on your application's data structure and relationships
+//    // For example, you can have a map of attribute name and corresponding offer values in the TenderOffer entity
+//    TenderOffer tenderOffer = tenderOfferRepository.findById(_tenderOffer.getId())
+//            .orElseThrow(() -> new EntityNotFoundException("Tender offer not found with ID: " + _tenderOffer.getId()));
+//
+//    return tenderOffer.getAttributeOffers();
+//  }
 
   private Double evaluateAttribute(String attributeName, Object attributeValue, Map<String, Object> criterionPreferences) {
     // Apply evaluation logic based on attribute type and preference

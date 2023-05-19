@@ -1,5 +1,5 @@
 server:
-  port: 8085
+  port: 0
 
 spring:
   application:
@@ -17,3 +17,29 @@ spring:
       hibernate:
         ddl-auto: update
       show-sql: 'true'
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: 'true'
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8020/eureka/
+    registerWithEureka: true
+    fetchRegistry: true
+  instance:
+    instanceId: '${spring.application.name}:${spring.application.instance_id:${random.value}}'
+    statusPageUrlPath: /actuator/info
+    healthCheckUrlPath: /actuator/health
+    preferIpAddress: true
+    hostname: localhost
+

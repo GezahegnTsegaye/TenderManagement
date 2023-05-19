@@ -6,6 +6,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
+@Setter@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "committee")
 public class Committee {
@@ -20,51 +24,4 @@ public class Committee {
   private String employeePosition;
   private String address;
 
-  public Committee(Long id, String firstName, String lastName, String employeePosition, String address) {
-    this.id = id;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.employeePosition = employeePosition;
-    this.address = address;
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  public String getFirstName() {
-    return firstName;
-  }
-
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
-
-  public String getLastName() {
-    return lastName;
-  }
-
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
-
-  public String getEmployeePosition() {
-    return employeePosition;
-  }
-
-  public void setEmployeePosition(String employeePosition) {
-    this.employeePosition = employeePosition;
-  }
-
-  public String getAddress() {
-    return address;
-  }
-
-  public void setAddress(String address) {
-    this.address = address;
-  }
 }

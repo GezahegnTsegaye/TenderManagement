@@ -38,12 +38,12 @@ public class TenderOffer {
   @Column(name = "composite_bid")
   private Double compositeBid;
 
-  @ElementCollection
-  @CollectionTable(name = "attribute_offers",
-          joinColumns = @JoinColumn(name = "tender_offer_id"))
-  @MapKeyColumn(name = "attribute_name")
-  @Column(name = "attribute_value")
-  private Map<String, Object> attributeOffers;
+//  @ElementCollection
+//  @CollectionTable(name = "attribute_offers",
+//          joinColumns = @JoinColumn(name = "tender_offer_id"))
+//  @MapKeyColumn(name = "attribute_name")
+//  @Column(name = "attribute_value")
+//  private Map<String, Object> attributeOffers;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "tender_id")
