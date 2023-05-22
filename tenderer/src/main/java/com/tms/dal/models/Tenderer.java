@@ -1,6 +1,5 @@
 package com.tms.dal.models;
 
-import com.tms.dal.models.bid.Bid;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +13,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "tenderer")
+@Table(name = "tenderer", indexes = {
+        @Index(name = "idx_tenderer_name", columnList = "name")
+})
 public class Tenderer {
 
   @Id
@@ -57,10 +58,7 @@ public class Tenderer {
   @OneToMany(mappedBy = "tenderer")
   private List<Insurance> insuranceInformation;
 
-  @OneToMany(mappedBy = "tenderer")
-  private List<Bid> bids;
 
-  // getters and setters
 }
 
 

@@ -1,3 +1,5 @@
+
+#user specific stuff:
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
@@ -11,6 +13,7 @@ target/
 *.iws
 *.iml
 *.ipr
+/out/
 
 ### Eclipse ###
 .apt_generated

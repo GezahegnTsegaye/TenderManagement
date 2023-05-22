@@ -32,6 +32,8 @@ public class Certifications {
   @JoinColumn(name = "tenderer_id")
   private Tenderer tenderer;
 
+
+
   // getters and setters
 }
 

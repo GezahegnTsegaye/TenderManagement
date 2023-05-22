@@ -29,5 +29,5 @@ public class RegisteredGood {
   @JoinColumn(name = "tender_id")
   private Tender tender;
 
-  // constructors, getters, and setters
+
 }

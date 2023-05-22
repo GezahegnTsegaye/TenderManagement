@@ -5,9 +5,18 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter@Getter@NoArgsConstructor@AllArgsConstructor
-public class BidDTO {
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.List;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class BidDTO {
     private Long bidId;
-    private TenderDTO tenderDTO;
+    private TenderDTO tender;
+    private List<BidItemDTO> bidItems;
+    private SupplierDTO supplier;
+
 }

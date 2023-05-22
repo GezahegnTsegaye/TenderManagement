@@ -6,9 +6,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter@Getter@NoArgsConstructor@AllArgsConstructor
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Table(name = "reference")
+@Table(name = "reference", indexes = {
+        @Index(name = "idx_reference_name", columnList = "name")
+})
 public class Reference {
 
   @Id

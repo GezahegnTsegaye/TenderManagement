@@ -62,6 +62,7 @@ public class EvaluatorServiceImpl implements EvaluatorService {
     evaluationResultDTO.setOverallScore(overallScore);
     evaluationResultDTO.setAttributeScores(attributeScores);
 
+
     return evaluationResultDTO;
   }
 
@@ -104,6 +105,8 @@ public class EvaluatorServiceImpl implements EvaluatorService {
       // Handle enumeration type
       // Assuming the score ratio is stored as a double in the criterionPreferences map
       Double scoreRatio = (Double) criterionPreferences.get(attributeName);
+
+
       return scoreRatio; // Return the ratio as the score
     }
 

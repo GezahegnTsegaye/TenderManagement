@@ -29,7 +29,6 @@ public class Tender {
     @Column(name = "closing_date")
     private LocalDateTime closingDate;
 
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tenderTypeId")
     private TenderType tenderType;
@@ -43,6 +42,9 @@ public class Tender {
 
     @OneToMany(mappedBy = "tender", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<RegisteredGood> registeredGoodList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "tender", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<TenderDetail> tenderDetails;
 
     // constructors, getters, and setters
 }

@@ -7,28 +7,43 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
-@Setter@Getter@NoArgsConstructor@AllArgsConstructor
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Table(name = "bid")
+@Table(name = "bids")
 public class Bid {
 
   @Id
-  @Column(name = "bidId")
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "bid_seq_gen")
-  @SequenceGenerator(name = "bid_seq_gen", sequenceName = "bid_seq", allocationSize = 1)
-  private Long id;
-
-  @Column(name = "price")
-  private Double price;
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "bid_id")
+  private Long bidId;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "tender_id")
   private Tender tender;
 
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "tenderer_id")
-  private Tenderer tenderer;
+  @OneToMany(mappedBy = "bid", cascade = CascadeType.ALL)
+  private List<BidItem> bidItems;
 
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "supplier_id")
+  private Supplier supplier;
+
+  @CreatedDate
+  @Column(name = "created_date")
+  private LocalDateTime createdDate;
+
+  @LastModifiedDate
+  @Column(name = "last_modified_date")
+  private LocalDateTime lastModifiedDate;
 
 }
+

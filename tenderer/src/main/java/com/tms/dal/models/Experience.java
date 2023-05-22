@@ -13,7 +13,9 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "experience")
+@Table(name = "experience", indexes = {
+        @Index(name = "idx_experience_project_name", columnList = "project_name")
+})
 public class Experience {
 
   @Id

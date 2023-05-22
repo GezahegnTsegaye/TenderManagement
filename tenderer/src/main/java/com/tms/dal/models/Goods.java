@@ -1,15 +1,19 @@
 package com.tms.dal.models;
 
+import com.tms.dal.models.bid.Supplier;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
-@Setter
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -21,21 +25,32 @@ public class Goods {
   @Column(name = "goods_id")
   private Long goodsId;
 
-  @Column(name = "goods_name")
-  private String goodsName;
+  @Column(name = "name")
+  private String name;
 
-  @Column(name = "goods_description")
-  private String goodsDescription;
-
-  @Column(name = "unit_price")
-  private BigDecimal unitPrice;
+  @Column(name = "description")
+  private String description;
 
   @Column(name = "quantity")
   private int quantity;
 
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "tender_id")
-  private Tender tender;
+  @Column(name = "unit_price")
+  private BigDecimal unitPrice;
 
-  // getters and setters
+  @ManyToOne
+  @JoinColumn(name = "supplier_id", nullable = false)
+  private Supplier supplier;
+
+  @ManyToOne
+  @JoinColumn(name = "item_id", nullable = false)
+  private Item item;
+
+  @CreatedDate
+  @Column(name = "created_date")
+  private LocalDateTime createdDate;
+
+  @LastModifiedDate
+  @Column(name = "last_modified_date")
+  private LocalDateTime lastModifiedDate;
+
 }

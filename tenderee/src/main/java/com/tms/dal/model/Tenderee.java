@@ -1,10 +1,15 @@
 package com.tms.dal.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Setter@Getter@NoArgsConstructor@AllArgsConstructor
 @Entity
 @Table(name = "tenderee")
 public class Tenderee {
@@ -17,8 +22,9 @@ public class Tenderee {
   @Column(name = "name")
   private String name;
 
-  @Column(name = "contact_details")
-  private String contactDetails;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "contactDetailId")
+  private ContactDetail contactDetail;
 
   @Column(name = "address")
   private String address;

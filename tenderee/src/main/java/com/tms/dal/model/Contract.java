@@ -1,11 +1,19 @@
 package com.tms.dal.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.cglib.core.Local;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+
+@Setter
+@Getter
+@NoArgsConstructor@AllArgsConstructor
 @Entity
 @Table(name = "contract")
 public class Contract {
