@@ -1,5 +1,5 @@
 server:
-  port: 0
+  port: 8082
 
 spring:
   application:
@@ -43,11 +43,11 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
     registerWithEureka: true
     fetchRegistry: true
-  instance:
-    instanceId: '${spring.application.name}:${spring.application.instance_id:${random.value}}'
-    statusPageUrlPath: /actuator/info
-    healthCheckUrlPath: /actuator/health
-    preferIpAddress: true
-    hostname: localhost
+#  instance:
+#    instanceId: '${spring.application.name}:${spring.application.instance_id:${random.value}}'
+#    statusPageUrlPath: /actuator/info
+#    healthCheckUrlPath: /actuator/health
+#    preferIpAddress: true
+#    hostname: localhost
 
 

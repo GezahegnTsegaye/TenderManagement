@@ -30,6 +30,7 @@ public class TenderOfferServiceImpl implements TenderOfferService {
         maxScore = tenderOffer.getOverallScore();
         maxScoreTenderOffer = tenderOffer;
       }
+
     }
 
     return maxScoreTenderOffer;

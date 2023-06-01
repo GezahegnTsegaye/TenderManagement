@@ -1,5 +1,5 @@
 server:
-  port: 0
+  port: 8083
 #  port: 8081
   servlet:
     context-path: /tender
@@ -60,13 +60,13 @@ management:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/,http://localhost:8020/eureka/
+      defaultZone: http://localhost:8761/eureka/
     registerWithEureka: true
     fetchRegistry: true
-  instance:
-    instanceId: '${spring.application.name}:${spring.application.instance_id:${random.value}}'
-    statusPageUrlPath: /actuator/info
-    healthCheckUrlPath: /actuator/health
-    preferIpAddress: true
-    hostname: localhost
+#  instance:
+#    instanceId: '${spring.application.name}:${spring.application.instance_id:${random.value}}'
+#    statusPageUrlPath: /actuator/info
+#    healthCheckUrlPath: /actuator/health
+#    preferIpAddress: true
+#    hostname: localhost
 
