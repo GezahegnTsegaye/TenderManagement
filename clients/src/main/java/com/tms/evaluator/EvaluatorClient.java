@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 @FeignClient(name = "evalutor",
 url="${clients.evaluator.url}")
 public interface EvaluatorClient {
-  @PostMapping("api/evaluators")
+//  @PostMapping("api/evaluators")
   public void sendEvaluator(EvaluatorRequest evaluatorRequest);
 }

@@ -1,42 +1,13 @@
-server:
-  port: 8083
-
 spring:
-  autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration
-  datasource:
-    url: jdbc:postgresql://localhost:5433/tenderee-service
-    username: postgres
-    password: admin
-    driverClassName: org.postgresql.Driver
-  #     driver-class-name: org.postgresql.Driver
-  jackson:
-    serialization:
-      WRITE_DATES_AS_TIMESTAMPS: false
+  application:
+    name: tenderee-service
+  config:
+    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}
 
 
-
-  # JPA and Hibernate #####
-  jpa:
-    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
-    generate-ddl: true
-    properties:
-      hibernate:
-        jdbc:
-          lob:
-            non_contextual_creation: true
-        ddl-auto: create-drop
-        show_sql: true
-        format_sql: true
-
-
-  output:
-    ansi:
-      enabled: detect
-
-#
-logging:
-  level:
-    org.hibernate: info
-    org.springframework.web: debug
-
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+    import: configserver:http://config-server:8888

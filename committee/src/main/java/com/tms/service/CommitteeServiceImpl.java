@@ -1,27 +1,35 @@
 package com.tms.service;
 
 
+import com.tms.dal.dto.CommitteeDTO;
+import com.tms.dal.mapper.CommitteeMapper;
 import com.tms.dal.model.Committee;
 import com.tms.dal.repository.CommitteeRepository;
 import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
+
+@RequiredArgsConstructor
 @Service
 public class CommitteeServiceImpl implements CommitteeService {
 
 
   private final CommitteeRepository committeeRepository;
+  private final CommitteeMapper committeeMapper;
 
-  public CommitteeServiceImpl(CommitteeRepository committeeRepository) {
-    this.committeeRepository = committeeRepository;
-  }
+
 
 
   @Override
-  public List<Committee> getAllCommittees() {
-    return committeeRepository.findAll();
+  public List<CommitteeDTO> getAllCommittees() {
+    List<Committee> committees = committeeRepository.findAll();
+
+
+    return committeeMapper.toDTOList(committees);
   }
 
   @Override

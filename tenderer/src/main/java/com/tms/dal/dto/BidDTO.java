@@ -17,6 +17,6 @@ public class BidDTO {
     private Long bidId;
     private TenderDTO tender;
     private List<BidItemDTO> bidItems;
-    private SupplierDTO supplier;
+    private SupplierDTO supplierDTO;
 
 }

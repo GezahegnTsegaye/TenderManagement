@@ -1,19 +1,13 @@
-server:
-  port: 8085
-
 spring:
   application:
     name: committee-service
-  datasource:
+  config:
+    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}
 
-    url: jdbc:postgresql://localhost:5433/committee-service
-    username: 'postgres'
-    password: 'admin'
-    jpa:
-      properties:
-        hibernate:
-          dialect: org.hibernate.dialect.PostgreSQLDialect
-          format_sql: 'true'
-      hibernate:
-        ddl-auto: update
-      show-sql: 'true'
+
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+    import: configserver:http://config-server:8888
