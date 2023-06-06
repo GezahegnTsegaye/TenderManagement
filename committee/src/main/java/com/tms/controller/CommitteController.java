@@ -10,7 +10,7 @@ import java.util.List;
 public interface CommitteController {
 
   @GetMapping
-  ResponseEntity<List<Committee>> getAllCommittees();
+  ResponseEntity<List<CommitteeDTO>> getAllCommittees();
 
   @GetMapping("/{id}")
   ResponseEntity<Committee> getCommitteeById(@PathVariable Long id);

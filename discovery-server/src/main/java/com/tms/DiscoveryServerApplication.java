@@ -13,4 +13,6 @@ public class DiscoveryServerApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder(DiscoveryServerApplication.class).run(args);
     }
+
+
 }

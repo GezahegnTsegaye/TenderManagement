@@ -8,7 +8,7 @@ import java.util.List;
 public interface CommitteeService {
 
 
-  List<Committee> getAllCommittees();
+  List<CommitteeDTO> getAllCommittees();
 
   Committee getCommitteeById(Long id);
 

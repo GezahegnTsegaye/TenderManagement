@@ -1,5 +1,6 @@
 package com.tms.controller;
 
+import com.tms.dal.dto.CommitteeDTO;
 import com.tms.dal.model.Committee;
 import com.tms.service.CommitteeService;
 import org.springframework.http.HttpStatus;
@@ -22,8 +23,8 @@ public class CommitteeControllerImpl implements CommitteController {
 
   @Override
   @GetMapping
-  public ResponseEntity<List<Committee>> getAllCommittees() {
-    List<Committee> committees = committeeService.getAllCommittees();
+  public ResponseEntity<List<CommitteeDTO>> getAllCommittees() {
+    List<CommitteeDTO> committees = committeeService.getAllCommittees();
     return ResponseEntity.ok(committees);
   }
 

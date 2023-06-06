@@ -1,0 +1,35 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: tenderer-service
+  #
+  datasource:
+    url: jdbc:postgresql://localhost:5433/tenderer-service
+    username: 'postgres'
+    password: 'admin'
+    jpa:
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          format_sql: 'true'
+      hibernate:
+        ddl-auto: update
+      show-sql: 'true'
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registerWithEureka: true
+    fetchRegistry: true
+#  instance:
+#    instanceId: '${spring.application.name}:${spring.application.instance_id:${random.value}}'
+#    statusPageUrlPath: /actuator/info
+#    healthCheckUrlPath: /actuator/health
+#    preferIpAddress: true
+#    hostname: localhost
+
+

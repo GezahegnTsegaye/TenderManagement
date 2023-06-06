@@ -8,7 +8,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.tms.dal"})
 public class TendererApplication {
   public static void main(String[] args) {
     SpringApplication.run(TendererApplication.class, args);
