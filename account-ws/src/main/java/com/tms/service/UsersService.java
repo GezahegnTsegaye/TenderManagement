@@ -1,14 +1,15 @@
 package com.tms.service;
 
 
-import com.tms.model.Users;
-
-import java.util.List;
+import com.tms.shared.UserDto;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 public interface UsersService {
 
+  UserDto createUser(UserDto userDetails);
 
-    Users findByUsername(String username);
+  UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
 
-    List<Users> findAll();
+  UserDto getUserDetailsByEmail(String email);
 }
