@@ -1,0 +1,10 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+  cloud:
+    config:
+      server:
+        git:
+          username: ${GIT_USERNAME}
+          password: ${GIT_PASSWORD}
