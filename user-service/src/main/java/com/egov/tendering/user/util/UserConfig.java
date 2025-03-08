@@ -1,4 +1,4 @@
-package com.tms.util;
+package com.egov.tendering.user.util;
 
 
 public final class UserConfig {
