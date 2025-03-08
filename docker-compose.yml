@@ -18,9 +18,9 @@
 #    ports:
 #      - "8761:8761"
 #
-#  tenderer-service:
-#    image: tms/tenderer-service
-#    container_name: tenderer-service
+#  controller-service:
+#    image: tms/controller-service
+#    container_name: controller-service
 #    mem_limit: 512M
 #    depends_on:
 #      - config-server
@@ -29,9 +29,9 @@
 #    ports:
 #      - "8081:8081"
 #
-#  tenderee-service:
-#    image: tms/tenderee-service
-#    container_name: tenderee-service
+#  service-service:
+#    image: tms/service-service
+#    container_name: service-service
 #    mem_limit: 512M
 #    depends_on:
 #      - config-server

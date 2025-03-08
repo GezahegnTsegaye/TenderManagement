@@ -16,15 +16,15 @@ scrape_configs:
     static_configs:
       - targets: ['api-gateway:8080']
 
-  - job_name: tenderer-service
+  - job_name: controller-service
     metrics_path: /actuator/prometheus
     static_configs:
-      - targets: ['tenderer-service:8081']
+      - targets: ['controller-service:8081']
 
-  - job_name: tenderee-service
+  - job_name: service-service
     metrics_path: /actuator/prometheus
     static_configs:
-      - targets: ['tenderee-service:8082']
+      - targets: ['service-service:8082']
 
   - job_name: committee-service
     metrics_path: /actuator/prometheus

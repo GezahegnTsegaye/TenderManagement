@@ -1,57 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.2</version>
+        <version>3.2.2</version>
+        <relativePath/>
     </parent>
 
-    <groupId>com.tms</groupId>
-    <artifactId>tms</artifactId>
+    <groupId>com.egov.tendering</groupId>
+    <artifactId>tendering-system</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <version>1.0</version>
-
-
-    <name>${project.artifactId}</name>
-    <description>Online Tender Management System</description>
-    <url>https://www.tms.com</url>
+    <name>E-Government Tendering System</name>
+    <description>Event-driven microservices for e-Government procurement and tendering</description>
 
     <modules>
-        <module>tenderee</module>
-        <module>tenderer</module>
-        <module>committee</module>
-        <module>evaluator</module>
-        <module>clients</module>
-        <module>account-ws</module>
-        <module>discovery-server</module>
-        <module>api-gateway</module>
-        <module>amqp</module>
-        <module>notification</module>
-        <module>config-server</module>
+        <module>common-lib</module>
+        <module>config-service</module>
+        <module>discovery-service</module>
+        <module>gateway-service</module>
+        <module>user-service</module>
+        <module>tender-service</module>
+        <module>bidding-service</module>
+        <module>evaluation-service</module>
+        <module>contract-service</module>
+        <module>document-service</module>
+        <module>notification-service</module>
+        <module>audit-service</module>
     </modules>
 
     <properties>
-
         <java.version>17</java.version>
-        <assertj.version>3.17.1</assertj.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <spring-cloud.version>2022.0.1</spring-cloud.version>
-        <chaos-monkey-spring-boot.version>2.3.10</chaos-monkey-spring-boot.version>
-        <jolokia-core.version>1.7.1</jolokia-core.version>
+        <!-- Spring Boot and Cloud -->
+        <spring-boot.version>3.2.2</spring-boot.version>
+        <spring-cloud.version>2023.0.0</spring-cloud.version>
 
-        <docker.image.prefix>tms</docker.image.prefix>
-        <docker.image.exposed.port>9090</docker.image.exposed.port>
-        <docker.image.dockerfile.dir>${basedir}</docker.image.dockerfile.dir>
-        <docker.image.dockerize.version>v0.6.1</docker.image.dockerize.version>
-        <docker.plugin.version>1.2.0</docker.plugin.version>
+        <!-- Kafka -->
+        <kafka.version>3.5.1</kafka.version>
+        <spring-kafka.version>3.1.0</spring-kafka.version>
 
+        <!-- Database -->
+        <mysql.version>8.0.33</mysql.version>
+        <flyway.version>9.19.4</flyway.version>
+
+        <!-- Security -->
+        <jjwt.version>0.11.5</jjwt.version>
+
+        <!-- Utilities -->
+        <lombok.version>1.18.30</lombok.version>
+        <mapstruct.version>1.5.5.Final</mapstruct.version>
+        <commons-io.version>2.15.1</commons-io.version>
+        <commons-lang3.version>3.14.0</commons-lang3.version>
+
+        <!-- Testing -->
+        <junit-jupiter.version>5.10.1</junit-jupiter.version>
+        <mockito.version>5.8.0</mockito.version>
+        <testcontainers.version>1.19.3</testcontainers.version>
+
+        <!-- Plugins -->
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
+        <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
+        <openapi-generator-maven-plugin.version>7.0.1</openapi-generator-maven-plugin.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!-- Spring Boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Spring Cloud -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -59,131 +91,223 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!-- Internal Modules -->
             <dependency>
-                <groupId>de.codecentric</groupId>
-                <artifactId>chaos-monkey-spring-boot</artifactId>
-                <version>${chaos-monkey-spring-boot.version}</version>
+                <groupId>com.egov.tendering</groupId>
+                <artifactId>common-lib</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Kafka -->
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-clients</artifactId>
+                <version>${kafka.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.jolokia</groupId>
-                <artifactId>jolokia-core</artifactId>
-                <version>${jolokia-core.version}</version>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring-kafka.version}</version>
+            </dependency>
+
+            <!-- Database -->
+            <dependency>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
+                <version>${mysql.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.assertj</groupId>
-                <artifactId>assertj-core</artifactId>
-                <version>${assertj.version}</version>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-core</artifactId>
+                <version>${flyway.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-mysql</artifactId>
+                <version>${flyway.version}</version>
+            </dependency>
+
+            <!-- Security -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jjwt.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId>
+                <version>${jjwt.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+
+            <!-- Utilities -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <!-- Testing -->
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${junit-jupiter.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>testcontainers-bom</artifactId>
+                <version>${testcontainers.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
+        <!-- Common dependencies for all modules -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
-
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                    <configuration>
+                        <excludes>
+                            <exclude>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                            </exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                                <version>${lombok.version}</version>
+                            </path>
+                            <path>
+                                <groupId>org.mapstruct</groupId>
+                                <artifactId>mapstruct-processor</artifactId>
+                                <version>${mapstruct.version}</version>
+                            </path>
+                        </annotationProcessorPaths>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${jacoco-maven-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>report</id>
+                            <phase>test</phase>
+                            <goals>
+                                <goal>report</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.openapitools</groupId>
+                    <artifactId>openapi-generator-maven-plugin</artifactId>
+                    <version>${openapi-generator-maven-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
     <profiles>
         <profile>
-            <id>springboot</id>
+            <id>dev</id>
             <activation>
-                <file>
-                    <!-- Just a way to identify a Spring Boot application -->
-                    <exists>src/main/resources/application.yml</exists>
-                </file>
+                <activeByDefault>true</activeByDefault>
             </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.springframework.boot</groupId>
-                        <artifactId>spring-boot-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <!-- Spring Boot Actuator displays build-related information if a META-INF/build-info.properties file is present -->
-                                <goals>
-                                    <goal>build-info</goal>
-                                </goals>
-                                <configuration>
-                                    <additionalProperties>
-                                        <encoding.source>${project.build.sourceEncoding}</encoding.source>
-                                        <encoding.reporting>${project.reporting.outputEncoding}</encoding.reporting>
-                                        <java.source>${maven.compiler.source}</java.source>
-                                        <java.target>${maven.compiler.target}</java.target>
-                                    </additionalProperties>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-                    <!-- Spring Boot Actuator displays build-related information if a META-INF/build-info.properties file is present -->
-                    <plugin>
-                        <groupId>io.github.git-commit-id</groupId>
-                        <artifactId>git-commit-id-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>revision</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <verbose>true</verbose>
-                            <dateFormat>yyyy-MM-dd'T'HH:mm:ssZ</dateFormat>
-                            <generateGitPropertiesFile>true</generateGitPropertiesFile>
-                            <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
-                            <failOnNoGitDirectory>false</failOnNoGitDirectory>
-                            <failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
+            <properties>
+                <spring.profiles.active>dev</spring.profiles.active>
+            </properties>
         </profile>
-
         <profile>
-            <id>buildDocker</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.spotify</groupId>
-                        <artifactId>docker-maven-plugin</artifactId>
-                        <version>${docker.plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <phase>install</phase>
-                                <goals>
-                                    <goal>build</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-                            <dockerDirectory>${docker.image.dockerfile.dir}</dockerDirectory>
-                            <serverId>docker-hub</serverId>
-                            <registryUrl>https://index.docker.io/v1/</registryUrl>
-                            <resources>
-                                <resource>
-                                    <targetPath>/</targetPath>
-                                    <directory>${project.build.directory}</directory>
-                                    <include>${project.build.finalName}.jar</include>
-                                </resource>
-                            </resources>
-                            <buildArgs>
-                                <ARTIFACT_NAME>${project.build.finalName}</ARTIFACT_NAME>
-                                <EXPOSED_PORT>${docker.image.exposed.port}</EXPOSED_PORT>
-                                <DOCKERIZE_VERSION>${docker.image.dockerize.version}</DOCKERIZE_VERSION>
-                            </buildArgs>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
+            <id>test</id>
+            <properties>
+                <spring.profiles.active>test</spring.profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <spring.profiles.active>prod</spring.profiles.active>
+            </properties>
         </profile>
     </profiles>
 
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>

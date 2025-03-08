@@ -5,6 +5,8 @@ spring:
     active: ${SPRING_PROFILES_ACTIVE:dev}
   cloud:
     config:
+      activate:
+        on-profile: local
       uri: ${CONFIG_SERVER_URL:http://localhost:8888}
       fail-fast: true
   datasource:

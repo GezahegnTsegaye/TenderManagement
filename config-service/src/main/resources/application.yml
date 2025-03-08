@@ -1,21 +1,19 @@
 spring:
   application:
     name: config-service
-
   cloud:
     config:
       server:
         git:
-          uri: ${GIT_URI}
+          uri: https://github.com/GezahegnTsegaye/tender-system-config.git
           username: ${GIT_USERNAME}
-          password: ${GIT_PASSWORD} #git access token
+          password: ${GIT_PASSWORD}
           clone-on-start: true
           refresh-rate: 60
 
 server:
   port: 8888
 
-# Eureka Client Configuration
 eureka:
   client:
     service-url:
@@ -24,7 +22,6 @@ eureka:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${random.value}
 
-# Actuator Endpoints
 management:
   endpoints:
     web:
@@ -33,14 +30,6 @@ management:
           - health
           - info
           - refresh
-
-  # Health check for config server
   health:
     config:
       enabled: true
-
-logging:
-  level:
-    org.springframework.cloud.config: DEBUG
-    org.eclipse.jgit: INFO
-    org.springframework.boot: INFO
