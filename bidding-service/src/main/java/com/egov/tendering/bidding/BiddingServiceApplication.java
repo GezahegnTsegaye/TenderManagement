@@ -1,15 +1,14 @@
-package com.tms;
+package com.egov.tendering.bidding;
 
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.context.annotation.ComponentScan;
 
-@EnableDiscoveryClient
 @SpringBootApplication
-public class TendererApplication {
+@EnableDiscoveryClient
+public class BiddingServiceApplication {
   public static void main(String[] args) {
-    SpringApplication.run(TendererApplication.class, args);
+    SpringApplication.run(BiddingServiceApplication.class, args);
   }
 }

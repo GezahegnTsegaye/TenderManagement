@@ -1,4 +1,4 @@
-package com.tms.dal.models.bid;
+package com.egov.tendering.bidding.dal.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package com.tms.exception;
+package com.egov.tendering.bidding.exception;
 
 public class EntityNotFoundException extends RuntimeException {
 
@@ -8,6 +8,7 @@ public class EntityNotFoundException extends RuntimeException {
 
   public EntityNotFoundException(Throwable throwable) {
     super(throwable);
+
   }
 
   public EntityNotFoundException(String message, Throwable throwable) {
