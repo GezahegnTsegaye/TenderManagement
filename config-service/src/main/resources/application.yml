@@ -1,15 +1,19 @@
 spring:
   application:
     name: config-service
+  profiles:
+    active: native
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/GezahegnTsegaye/tender-system-config.git
-          username: ${GIT_USERNAME}
-          password: ${GIT_PASSWORD}
-          clone-on-start: true
-          refresh-rate: 60
+        native:
+          search-locations: file:./config-repo
+#        git:
+#          uri: https://github.com/GezahegnTsegaye/tender-system-config.git
+#          username: ${GIT_USERNAME}
+#          password: ${GIT_PASSWORD}
+#          clone-on-start: true
+#          refresh-rate: 60
 
 server:
   port: 8888

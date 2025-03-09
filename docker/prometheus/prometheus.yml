@@ -31,10 +31,10 @@ scrape_configs:
     static_configs:
       - targets: ['committee-service:8083']
 
-  - job_name: evaluator-service
+  - job_name: event-service
     metrics_path: /actuator/prometheus
     static_configs:
-      - targets: [ 'evaluator-service:8084' ]
+      - targets: [ 'event-service:8084' ]
 
   - job_name: notification-server
     metrics_path: /actuator/prometheus

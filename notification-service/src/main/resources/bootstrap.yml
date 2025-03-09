@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: notification-service
+  cloud:
+    config:
+      uri: http://localhost:8888
+      fail-fast: false
+      retry:
+        initial-interval: 1000
+        max-attempts: 6
+        max-interval: 2000
+        multiplier: 1.1
+
+# Encrypt support for sensitive properties
+encrypt:
+  fail-on-error: false
+
+# For local development - override with environment variables in production
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,refresh

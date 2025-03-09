@@ -25,11 +25,11 @@
         <module>user-service</module>
         <module>tender-service</module>
         <module>bidding-service</module>
-        <module>evaluation-service</module>
         <module>contract-service</module>
         <module>document-service</module>
         <module>notification-service</module>
         <module>audit-service</module>
+        <module>evaluation-service</module>
     </modules>
 
     <properties>
@@ -70,6 +70,7 @@
         <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
         <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
         <openapi-generator-maven-plugin.version>7.0.1</openapi-generator-maven-plugin.version>
+        <twilio.version>9.0.0</twilio.version>
     </properties>
 
     <dependencyManagement>
@@ -167,6 +168,12 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.twilio.sdk</groupId>
+                <artifactId>twilio</artifactId>
+                <version>${twilio.version}</version>
             </dependency>
 
             <!-- Testing -->

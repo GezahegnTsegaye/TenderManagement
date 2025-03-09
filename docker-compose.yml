@@ -51,8 +51,8 @@
 #    ports:
 #      - "8083:8083"
 #
-#  evaluator-service:
-#    image: tms/evaluator-service
+#  event-service:
+#    image: tms/event-service
 #    container_name: committee-service
 #    mem_limit: 512M
 #    depends_on:

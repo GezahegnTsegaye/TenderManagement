@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: evaluator-service
+  name: event-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: evaluator-service
+      app: event-service
   template:
     metadata:
       labels:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: evalutor-service
-          image: gezahegn/evaluator-service
+          image: gezahegn/event-service
           ports:
             - containerPort: 8091
           env:
@@ -28,7 +28,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: evaluator-service
+  name: event-service
 spec:
   selector:
     app: evalutor-service
