@@ -315,7 +315,7 @@ public class BidServiceImpl implements BidService {
     @Override
     @Transactional
     public BidClarificationDTO requestClarification(Long bidId, String question, Long evaluatorId, int daysToRespond) {
-        log.info("Requesting clarification for bid ID: {} by evaluator ID: {}", bidId, evaluatorId);
+        log.info("Requesting clarification for bid ID: {} by event ID: {}", bidId, evaluatorId);
         Bid bid = bidRepository.findById(bidId)
                 .orElseThrow(() -> new BidNotFoundException(bidId));
 
