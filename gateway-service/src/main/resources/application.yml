@@ -1,0 +1,51 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: 'true'
+      routes:
+        - id: vets-service
+          uri: lb://controller-service
+          predicates:
+            - Path=/api/controller/**
+          filters:
+            - StripPrefix=2
+        - id: service-service
+          uri: lb://service-service
+          predicates:
+            - Path=/api/service/**
+          filters:
+            - StripPrefix=2
+        - id: event-service
+          uri: lb://event-service
+          predicates:
+            - Path=/api/event/**
+          filters:
+            - StripPrefix=2
+        - id: committee-service
+          uri: lb://committee-service
+          predicates:
+            - Path=/api/committee/**
+          filters:
+            - StripPrefix=2
+        - id: account-ws
+          uri: lb://account-service
+          predicates:
+            - Path=/api/account/**
+          filters:
+            - StripPrefix=2
+
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+    import: configserver:http/config-server:8888
