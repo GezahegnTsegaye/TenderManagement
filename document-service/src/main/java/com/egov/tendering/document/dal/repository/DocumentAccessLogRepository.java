@@ -2,7 +2,6 @@
 package com.egov.tendering.document.dal.repository;
 
 import com.egov.tendering.document.dal.model.DocumentAccessLog;
-import com.egov.tendering.document.dal.model.DocumentStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

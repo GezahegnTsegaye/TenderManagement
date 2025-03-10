@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.egov.tendering</groupId>
-    <artifactId>tendering-system</artifactId>
+    <artifactId>e-government-tendering-system</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>E-Government Tendering System</name>
