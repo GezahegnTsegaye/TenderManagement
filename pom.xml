@@ -48,7 +48,7 @@
         <spring-kafka.version>3.1.0</spring-kafka.version>
 
         <!-- Database -->
-        <mysql.version>8.0.33</mysql.version>
+        <mysql.version>8.2.0</mysql.version>
         <flyway.version>9.19.4</flyway.version>
 
         <!-- Security -->
